@@ -1,0 +1,56 @@
+# Generated with Claude.AI
+Yaml Localization: לוקליזציה של Yaml
+Navigation menu: תפריט ניווט
+
+Home: בית
+Hello, world!: שלום עולם!
+Welcome to your new app.: ברוכים הבאים לאפליקציה החדשה שלכם!
+
+About: אודות
+
+Counter: מונה
+'Current count: {0}': 'ספירה נוכחית: {0}'
+Click me: לחץ עלי
+
+Weather: מזג אוויר
+Loading...: טוען...
+Date: תאריך
+Temp. (C): טמפ׳ (C)
+Temp. (F): טמפ׳ (F)
+Temperature in Celsius: טמפרטורה בצלזיוס
+Temperature in Fahrenheit: טמפרטורה בפרנהייט
+Summary: סיכום
+Freezing: קפוא
+Bracing: מרענן
+Chilly: קריר
+Cool: קר
+Mild: מתון
+Warm: חם
+Balmy: נעים
+Hot: חם מאוד
+Sweltering: מחניק
+Scorching: צורב
+
+Culture Example 1: דוגמה תרבותית 1
+Rendered values: ערכים מוצגים
+Number: מספר
+'{0} elements that don''t set a {1}': 'רכיבי {0} שלא מגדירים {1}'
+The following {0} elements use {1}.: רכיבי {0} הבאים משתמשים ב-{1}.
+'{0} elements that set a {1}': 'רכיבי {0} שמגדירים {1}'
+
+Change theme: שינוי נושא
+Dark: כהה
+Light: בהיר
+Auto: אוטומטי
+
+Sorry, there's nothing at this address.: מצטערים, אין כאן כלום.
+License: רישיון
+Privacy policy: מדיניות פרטיות
+
+Menu: תפריט
+Back: חזור
+Close: סגור
+Back to top: חזור למעלה
+
+An unhandled error has occurred.: אירעה שגיאה לא מטופלת.
+Reload: רענן

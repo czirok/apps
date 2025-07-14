@@ -1,0 +1,251 @@
+{
+	"window.zoomLevel": 0.5,
+
+	"workbench.tree.indent": 20,
+	"workbench.colorTheme": "Default Dark Modern",
+	"workbench.preferredDarkColorTheme": "Default Dark Modern",
+	"workbench.preferredLightColorTheme": "Default Light Modern",
+
+	"fonted.font": "Adwaita Sans",
+	"editor.fontFamily": "FiraCode Nerd Font Mono",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 13,
+	"editor.fontWeight": "300",
+
+	"files.autoSave": "onFocusChange",
+
+	"github.copilot.enable": {
+		"csharp": true,
+		"razor": true,
+		"markdown": true,
+		"typescript": true,
+		"json": true,
+		"xml": true,
+		"yaml": true
+	},
+
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.expand": false,
+	"explorer.fileNesting.patterns": {
+		"*.razor": "$(capture).razor.*.yaml, $(capture).razor.yaml, $(capture).razor.*.resx, $(capture).razor.resx, $(capture).razor.*.cs, $(capture).razor.cs",
+		"*.cs": "$(capture).cs.*.yaml, $(capture).cs.yaml",
+		"*.json": "$(capture).Development.json, $(capture).json",
+		"*.css": "$(capture).css.map, $(capture).css",
+		"*.js": "$(capture).min.js, $(capture).js, $(capture).js.map"
+	},
+	"git.enabled": false,
+
+	"color-highlight.languages": [
+		"yaml",
+		"scss",
+		"json",
+		"jsonc",
+		"javascript",
+		"typescript",
+		"markdown",
+		"html",
+		"razor",
+		"csharp",
+		"xml",
+		"svg"
+	],
+	"color-highlight.markerType": "background",
+	"color-highlight.matchRgbWithNoFunction": true,
+	"color-highlight.matchWords": true,
+
+	"files.watcherExclude": {
+		// Visual Studio
+		".vs": true,
+		// VS Code
+		".vscode/.extensions": true,
+		".vscode/.user.data": true,
+		// .NET
+		".vscode/.linux/.dotnet": true,
+		// app
+		"**/bin": true,
+		"**/obj": true,
+		"**/*.csproj.user": true,
+		//  NodeJS
+		"**/node_modules/": true,
+		// publish
+		"publish/": true,
+		"**/js/dist": true,
+		"**/dist": true,
+		"pnpm-lock.yaml": true,
+		"**/*.css": true,
+		"**/*.css.map": true,
+		// Linux packages
+		"**/os/arch": true,
+		"**/os/deb": true,
+		"**/os/rpm": true,
+		"**/os/flatpak": true,
+		"**/os/targz": true,
+	},
+	"files.exclude": {
+		// Visual Studio
+		".vs": true,
+		// VS Code
+		".vscode/.extensions": true,
+		".vscode/.user.data": true,
+		// .NET
+		".vscode/.linux/.dotnet": true,
+		// app
+		"**/bin": true,
+		"**/obj": true,
+		"**/*.csproj.user": true,
+		//  NodeJS
+		"**/node_modules/": true,
+		// Linux packages
+		"**/os/arch": true,
+		"**/os/deb": true,
+		"**/os/rpm": true,
+		"**/os/flatpak": true,
+		"**/os/targz": true,
+	},
+	"search.exclude": {
+		// Visual Studio
+		".vs": true,
+		// VS Code
+		".vscode/.extensions": true,
+		".vscode/.user.data": true,
+		// .NET
+		".vscode/.linux/.dotnet": true,
+		// app
+		"**/bin": true,
+		"**/obj": true,
+		"**/*.csproj.user": true,
+		//  NodeJS
+		"**/node_modules/": true,
+		// publish
+		"publish/": true,
+		"**/js/dist": true,
+		"**/dist": true,
+		"pnpm-lock.yaml": true,
+		"**/*.css": true,
+		"**/*.css.map": true,
+		// Linux packages
+		"**/os/arch": true,
+		"**/os/deb": true,
+		"**/os/rpm": true,
+		"**/os/flatpak": true,
+		"**/os/targz": true,
+	},
+	"todo-tree.filtering.excludeGlobs": [
+		"**/.cache",
+		"**/.git",
+		"**/.DS_Store",
+		"**/Thumbs.db",
+		"**/node_modules",
+		"**/dist"
+	],
+	"todo-tree.general.tags": ["FIXME", "fixme", "TODO", "todo"],
+
+	// Enable the ESlint flat config support
+	// Don't remove this line
+	"prettier.enable": false,
+	"eslint.options": {
+		"overrideConfigFile": "eslint.config.ts"
+	},
+	"eslint.useFlatConfig": true,
+	"editor.formatOnSave": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.scss": "always",
+		"source.fixAll.markdown": "always",
+		"source.fixAll.stylelint": "always",
+		"source.fixAll.xml": "always",
+		"source.fixAll.yaml": "always",
+		"source.fixAll.json": "always"
+	},
+	// Silent the stylistic rules in you IDE, but still auto fix them
+	"eslint.rules.customizations": [],
+	// Enable eslint for all supported languages
+	"eslint.validate": [
+		"typescript",
+		"json",
+		"jsonc",
+		"markdown",
+		"xml",
+		"yaml"
+	],
+	"files.associations": {
+		"appsettings.json": "jsonc",
+		"appsettings.Development.json": "jsonc",
+		"*.csproj": "xml",
+		"*.props": "xml",
+		"site.webmanifest": "jsonc"
+	},
+	"css.validate": false,
+	"stylelint.validate": ["scss"],
+	"[markdown]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
+	},
+	"[yaml]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
+	},
+	"[xml]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
+	},
+	"[csharp]": {
+		"editor.defaultFormatter": "ms-dotnettools.csharp",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.csharp": "always"
+		}
+	},
+	"dotnet.defaultSolution": "disable",
+	"dotnet.formatting.organizeImportsOnFormat": true,
+	"omnisharp.enableEditorConfigSupport": true,
+	// "emmet.includeLanguages": {
+	// 	"aspnetcorerazor": "html"
+	// },
+	"[aspnetcorerazor]": {
+		"editor.formatOnSave": true,
+		"editor.tabSize": 3,
+		"editor.insertSpaces": false,
+		"editor.maxTokenizationLineLength": 500,
+		"editor.wordWrapColumn": 500,
+		"editor.wordWrap": "wordWrapColumn"
+	},
+	"workbench.editor.wrapTabs": true,
+	"workbench.iconTheme": "vscode-icons",
+	"workbench.colorCustomizations": {
+		"tab.activeBackground": "#580e34",
+		"tab.border": "#580e34",
+		"tab.activeBorderTop": "#ffd500",
+		"activityBar.activeBorder": "#ffd500",
+		"activityBar.activeBackground": "#580e33",
+		"activityBar.inactiveForeground": "#e7e7e799",
+		"activityBar.background": "#580e33",
+		"activityBar.foreground": "#e7e7e7",
+		"activityBarBadge.background": "#406e12",
+		"activityBarBadge.foreground": "#e7e7e7",
+		"statusBar.background": "#2c071a",
+		"statusBar.foreground": "#e7e7e7",
+		"statusBarItem.hoverBackground": "#580e34",
+		"statusBarItem.hoverForeground": "#ffffff",
+		"statusBarItem.remoteBackground": "#2c071a",
+		"statusBarItem.remoteForeground": "#e7e7e7",
+		"commandCenter.border": "#e7e7e799",
+		"titleBar.activeBackground": "#2c071a",
+		"titleBar.activeForeground": "#e7e7e7",
+		"titleBar.inactiveBackground": "#2c071a99",
+		"titleBar.inactiveForeground": "#e7e7e799",
+		"panelTitle.activeBorder": "#ffd500",
+		"focusBorder": "#580e34d0",
+		"menu.selectionBackground": "#580e34",
+		"list.activeSelectionBackground": "#580e34",
+		"list.inactiveSelectionBackground": "#580e34",
+		"button.background": "#580e34",
+		"button.foreground": "#e7e7e7",
+		"button.hoverBackground": "#2c071a",
+		"textLink.foreground": "#ffd500",
+		"textLink.activeForeground": "#f5df19d0",
+		"checkbox.background": "#580e34",
+		"quickInputList.focusIconForeground": "#ffd500",
+		"quickInputList.highlightForeground": "#FFC107"
+	}
+}

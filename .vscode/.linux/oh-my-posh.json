@@ -1,0 +1,114 @@
+{
+	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+	"blocks": [
+		{
+			"type": "prompt",
+			"alignment": "left",
+			"segments": [
+				{
+					"template": "\u256d\u2500 ",
+					"foreground": "#ffffff",
+					"type": "shell",
+					"style": "plain"
+				},
+				{
+					"template": "apps",
+					"foreground": "#e7e7e7",
+					"type": "shell",
+					"style": "plain"
+				},
+				{
+					"properties": {
+						"folder_icon": "\uf07b ",
+						"home_icon": "\ue617",
+						"style": "folder"
+					},
+					"template": " {{ .Location | replace (env \"APPS\") \"\" }}",
+					"foreground": "#ffd500",
+					"type": "path",
+					"style": "plain"
+				},
+				{
+					"foreground": "#e7e7e7",
+					"background": "#2c071a",
+					"style": "diamond",
+					"leading_diamond": " \ue0b6",
+					"properties": {
+						"branch_icon": "\ue725 ",
+						"fetch_status": true,
+						"fetch_upstream_icon": true
+					},
+					"template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350> \uf046 {{ .Staging.String }}</>{{ end }} ",
+					"type": "git",
+					"background_templates": [
+						"{{ if or (.Working.Changed) (.Staging.Changed) }}#580e33{{ end }}",
+						"{{ if and (gt .Ahead 0) (gt .Behind 0) }}#406e12{{ end }}",
+						"{{ if gt .Ahead 0 }}#e7e7e7{{ end }}",
+						"{{ if gt .Behind 0 }}#e7e7e7{{ end }}"
+					],
+					"trailing_diamond": "\ue0b4 "
+				},
+				{
+					"properties": {
+						"style": "roundrock",
+						"threshold": 0
+					},
+					"template": " {{ .FormattedMs }}",
+					"foreground": "#e7e7e7",
+					"type": "executiontime",
+					"style": "plain"
+				},
+				{
+					"properties": {
+						"linux": "\ue712",
+						"macos": "\ue711",
+						"windows": "\ue70f"
+					},
+					"template": " {{.Icon}}",
+					"foreground": "#e7e7e7",
+					"type": "os",
+					"style": "plain"
+				},
+				{
+					"properties": {
+						"fetch_package_manager": true,
+						"npm_icon": " <#158415>\ue5fa</> "
+					},
+					"template": " \ue718 {{ .Full }}",
+					"foreground": "#158415",
+					"type": "node",
+					"style": "plain"
+				},
+				{
+					"template": " \ue77f {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }}",
+					"foreground": "#2261dd",
+					"type": "dotnet",
+					"style": "plain"
+				}
+			]
+		},
+		{
+			"type": "prompt",
+			"alignment": "left",
+			"segments": [
+				{
+					"template": "\u2570\u2500",
+					"foreground": "#e7e7e7",
+					"type": "text",
+					"style": "plain"
+				},
+				{
+					"properties": {
+						"always_enabled": true
+					},
+					"template": "\ueab6 ",
+					"foreground": "#e7e7e7",
+					"type": "status",
+					"style": "plain"
+				}
+			],
+			"newline": true
+		}
+	],
+	"version": 3
+}

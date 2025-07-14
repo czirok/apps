@@ -1,0 +1,41 @@
+<Project>
+
+  <PropertyGroup>
+    <TargetFrameworks>$(NugetTargetFrameworks)</TargetFrameworks>
+
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+
+    <Copyright>© Copyright Ferenc Czirok. All rights reserved.</Copyright>
+
+    <Owners>Ferenc Czirok</Owners>
+    <Authors>Ferenc Czirok</Authors>
+
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageReadmeFile>NuGet.md</PackageReadmeFile>
+
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/czirok/apps</RepositoryUrl>
+    <RepositoryBranch>main</RepositoryBranch>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\LICENSE" Pack="True" PackagePath="\" />
+    <None Include="..\..\..\assets\nuget\$(PackageId).128.png" Pack="True" PackagePath="Icon.png" Link="Icon.png" />
+    <None Include="..\NuGet.md" Pack="True" PackagePath="\" />
+  </ItemGroup>
+
+  <Target Name="CopyPackage" AfterTargets="Pack">
+    <Move SourceFiles="$(OutputPath)$(PackageId).$(PackageVersion).nupkg" DestinationFolder="$(ProjectDir)..\..\..\.vscode/.linux/.dotnet/library-packs\" />
+    <Move SourceFiles="$(OutputPath)$(PackageId).$(PackageVersion).snupkg" DestinationFolder="$(ProjectDir)..\..\..\.vscode/.linux/.dotnet/library-packs\" />
+  </Target>
+
+</Project>

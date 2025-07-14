@@ -1,0 +1,54 @@
+{
+	"name": "@blazor/monorepo",
+	"type": "module",
+	"version": "1.0.0",
+	"private": true,
+	"license": "MIT",
+	"engines": {
+		"node": ">=24.3.0"
+	},
+	"scripts": {
+		"js": "pnpm -r run js",
+		"js-dev": "pnpm -r --parallel run js-dev",
+		"css": "pnpm --filter @blazor/css css"
+	},
+	"devDependencies": {
+		"@antfu/eslint-config": "^4.16.2",
+		"@blazor/css": "workspace:*",
+		"@blazor/js": "workspace:*",
+		"@microsoft/dotnet-js-interop": "^8.0.0",
+		"@prettier/plugin-xml": "^3.4.1",
+		"@rollup/plugin-node-resolve": "^16.0.1",
+		"@types/node": "^24.0.10",
+		"autoprefixer": "^10.4.21",
+		"cpy-cli": "^5.0.0",
+		"cross-env": "^7.0.3",
+		"cssnano": "^7.0.7",
+		"eslint": "^9.30.1",
+		"eslint-plugin-format": "^1.0.1",
+		"eslint-plugin-jsonc": "^2.20.1",
+		"jiti": "^2.4.2",
+		"markdownlint": "^0.38.0",
+		"postcss": "^8.5.6",
+		"postcss-cli": "^11.0.1",
+		"rollup": "^4.44.2",
+		"rollup-plugin-esbuild": "^6.2.1",
+		"rtlcss": "^4.3.0",
+		"sass": "^1.89.2",
+		"stylelint": "^16.21.1",
+		"stylelint-config-twbs-bootstrap": "^16.1.0",
+		"stylelint-scss": "^6.12.1",
+		"tiny-glob": "^0.2.9",
+		"typescript": "^5.8.3"
+	},
+	"pnpm": {
+		"overrides": {
+			"eslint": "^9.30.0",
+			"glob": "^11.0.3"
+		},
+		"onlyBuiltDependencies": [
+			"@parcel/watcher",
+			"esbuild"
+		]
+	}
+}

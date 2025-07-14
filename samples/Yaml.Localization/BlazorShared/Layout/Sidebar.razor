@@ -1,0 +1,45 @@
+﻿@inject IStringLocalizer<Lang> L
+@inject IPlatformService PlatformService
+
+<div id="sidebar" class="offcanvas-sm offcanvas-start flex-grow-1" tabindex="-1" aria-labelledby="sidebarLabel">
+	<div class="d-sm-none d-flex align-items-center py-2 ps-3 border-bottom border-light-subtle justify-content-start">
+		<IconClose />
+		<h5 class="offcanvas-title ms-2" id="sidebarLabel"></h5>
+	</div>
+
+	<div class="offcanvas-body">
+		<div class="navbar-collapse d-sm-inline-flex justify-content-between">
+			<ul class="navbar-nav flex-grow-1 list-group px-0 px-sm-2 px-md-3" data-bs-dismiss="offcanvas"
+				data-bs-target="#sidebar">
+				<li class="nav-item nav-item-hover">
+					<NavLink class="nav-link px-2 py-2 py-sm-1 rounded" href="counter">@L["Counter"]</NavLink>
+				</li>
+				<li class="nav-item nav-item-hover">
+					<NavLink class="nav-link px-2 py-2 py-sm-1 rounded" href="weather">@L["Weather"]</NavLink>
+				</li>
+				<li class="nav-item nav-item-hover">
+					<NavLink class="nav-link px-2 py-2 py-sm-1 rounded" href="culture-example-1">@L["Culture Example 1"]
+					</NavLink>
+				</li>
+				<li class="nav-item nav-item-hover">
+					<NavLink class="nav-link px-2 py-2 py-sm-1 rounded" href="about"> @L["About"]</NavLink>
+				</li>
+			</ul>
+			<ul class="navbar-nav">
+				<li class="d-sm-none nav-item py-2">
+					<hr class="my-2 text-secondary">
+				</li>
+				<li class="nav-item dropdown">
+					<CultureSelector @rendermode="PlatformService.RenderMode" />
+				</li>
+				<li class="nav-item py-2 col-12 col-sm-auto">
+					<div class="vr d-none d-sm-flex h-100 mx-sm-2 text-secondary"></div>
+					<hr class="d-sm-none my-2 text-secondary">
+				</li>
+				<li class="nav-item dropdown change-theme">
+					<ChangeTheme @rendermode="PlatformService.RenderMode" />
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

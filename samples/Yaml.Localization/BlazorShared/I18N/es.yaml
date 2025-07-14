@@ -1,0 +1,56 @@
+# Generated with Claude.AI
+Yaml Localization: Yaml Localización
+Navigation menu: Menú de navegación
+
+Home: Inicio
+Hello, world!: ¡Hola mundo!
+Welcome to your new app.: ¡Bienvenido a tu nueva aplicación!
+
+About: Acerca de
+
+Counter: Contador
+'Current count: {0}': 'Contador actual: {0}'
+Click me: Haz clic aquí
+
+Weather: Clima
+Loading...: Cargando...
+Date: Fecha
+Temp. (C): Temp. (C)
+Temp. (F): Temp. (F)
+Temperature in Celsius: Temperatura en Celsius
+Temperature in Fahrenheit: Temperatura en Fahrenheit
+Summary: Resumen
+Freezing: Helado
+Bracing: Vigorizante
+Chilly: Fresco
+Cool: Frío
+Mild: Templado
+Warm: Cálido
+Balmy: Agradable
+Hot: Caliente
+Sweltering: Sofocante
+Scorching: Abrasador
+
+Culture Example 1: Cultural
+Rendered values: Valores mostrados
+Number: Número
+'{0} elements that don''t set a {1}': '{0} campos sin configuración {1}'
+The following {0} elements use {1}.: Los siguientes {0} campos usan {1}.
+'{0} elements that set a {1}': '{0} campos con configuración {1}'
+
+Change theme: Cambiar tema
+Dark: Oscuro
+Light: Claro
+Auto: Automático
+
+Sorry, there's nothing at this address.: Lo siento, no hay nada en esta dirección.
+License: Licencia
+Privacy policy: Política de privacidad
+
+Menu: Menú
+Back: Volver
+Close: Cerrar
+Back to top: Volver arriba
+
+An unhandled error has occurred.: Ha ocurrido un error no controlado.
+Reload: Recargar

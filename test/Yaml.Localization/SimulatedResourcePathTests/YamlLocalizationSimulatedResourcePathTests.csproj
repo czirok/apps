@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>$(SampleTargetFramework)</TargetFramework>
+
+    <AssemblyName>YamlLocalizationSimulatedResourcePathTests</AssemblyName>
+    <RootNamespace>YamlLocalizationSimulatedResourcePathTests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Resources\**\*.yaml" />
+    <EmbeddedResource
+      Type="Non-Resx"
+      WithCulture="false"
+      Include="Resources\**\*.yaml"
+      LogicalName="$(RootNamespace).$([System.String]::Copy('%(RelativeDir)').Replace('\','.').Replace('/','.').Replace('Resources.',''))%(Filename).yaml"
+    />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Benchmark" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YamlLocalizationTests\YamlLocalizationTests.csproj" />
+    <ProjectReference Include="..\..\..\src\Yaml.Localization\src\Yaml.Localization.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="Moq" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

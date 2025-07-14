@@ -1,0 +1,28 @@
+.close-menu
+{
+  color: transparent;
+
+  &:hover
+	{
+    color: var(--bs-gray-500);
+  }
+
+  path
+	{
+    fill: var(--bs-gray-800);
+  }
+}
+
+@if $enable-dark-mode
+{
+  @include color-mode(dark, true)
+	{
+    .close-menu
+		{
+      path
+			{
+        fill: var(--bs-gray-400);
+      }
+    }
+  }
+}

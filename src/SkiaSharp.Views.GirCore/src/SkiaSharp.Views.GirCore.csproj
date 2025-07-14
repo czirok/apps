@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Title>SkiaSharp Views for GTK with GirCore</Title>
+    <Description>SkiaSharp rendering support for GTK4 applications using GirCore bindings. Provides SKDrawingArea widget for hardware-accelerated 2D graphics and custom drawing in Linux desktop applications with seamless Cairo integration.</Description>
+    <PackageTags>skiasharp;gtk;cairo;graphics;rendering;2d;gircore;linux;desktop;drawing;canvas;hardware-acceleration;widget;drawingarea;custom-controls</PackageTags>
+
+    <PackageId>SkiaSharp.Views.GirCore</PackageId>
+    <PackageProjectUrl>https://github.com/czirok/apps/src/SkiaSharp.Views.GirCore</PackageProjectUrl>
+    <PackageVersion>3.119.0-preview.5</PackageVersion>
+  </PropertyGroup>
+
+  <Import Project="..\..\Nuget.Common.props" />
+
+  <ItemGroup>
+    <PackageReference Include="GirCore.Cairo-1.0" />
+    <PackageReference Include="GirCore.Gtk-4.0" />
+    <PackageReference Include="GirCore.Graphene-1.0" />
+    <PackageReference Include="GirCore.GdkPixbuf-2.0" />
+    <PackageReference Include="SkiaSharp" />
+    <PackageReference Include="SkiaSharp.Views.Desktop.Common" />
+  </ItemGroup>
+
+</Project>

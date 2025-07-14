@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=apps
+Exec=tilix --profile="apps"
+Icon=./.vscode/.linux/apps.svg
+Terminal=false
+Categories=Utility;TerminalEmulator;

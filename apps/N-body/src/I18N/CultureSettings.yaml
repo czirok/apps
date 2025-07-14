@@ -1,0 +1,13 @@
+﻿Cultures:
+  - Name: en-US
+    Default: true
+    Active: true
+  - Name: hu-HU
+    Active: true
+  - Name: de-DE
+    Active: true
+
+Selector:
+  en-US: English
+  hu-HU: Magyar
+  de-DE: Deutsch

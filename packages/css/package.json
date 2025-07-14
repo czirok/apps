@@ -1,0 +1,34 @@
+{
+	"name": "@blazor/css",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "Blazor extended stylesheet library",
+	"author": "Ferenc Czirok",
+	"license": "MIT",
+	"homepage": "https://github.com/czirok/apps/",
+	"repository": {
+		"directory": "packages/css",
+		"type": "git",
+		"url": "git+https://github.com/czirok/apps.git"
+	},
+	"engines": {
+		"node": ">=24.3.0"
+	},
+	"scripts": {
+		"css": "pnpm css-compile && pnpm css-prefix && pnpm css-rtl && pnpm css-minify && pnpm copy",
+		"css-compile": "sass --style expanded --source-map --embed-sources --no-error-css --silence-deprecation import,color-functions,global-builtin scss/bootstrap.scss 'dist/bootstrap.css'",
+		"css-rtl": "cross-env NODE_ENV=RTL postcss --config postcss.config.mjs --dir 'dist' --ext '.rtl.css' 'dist/bootstrap.css' '!dist/bootstrap.min.css' '!dist/bootstrap.rtl.css'",
+		"css-lint": "pnpm css-lint-stylelint && pnpm css-lint-vars",
+		"css-lint-stylelint": "stylelint '**/*.scss' --cache --cache-location .cache/.stylelintcache",
+		"css-minify": "pnpm css-minify-main && pnpm css-minify-rtl",
+		"css-minify-main": "postcss dist/bootstrap.css -u cssnano -o dist/bootstrap.min.css --no-map",
+		"css-minify-rtl": "postcss dist/bootstrap.rtl.css -u cssnano -o dist/bootstrap.rtl.min.css --no-map",
+		"css-prefix": "pnpm css-prefix-main",
+		"css-prefix-main": "postcss --config build/postcss.config.mjs --replace 'dist/bootstrap.css' '!dist/bootstrap.rtl*.css' '!dist/bootstrap.min.css'",
+		"copy": "cpy dist/* ../../samples/Yaml.Localization/BlazorShared/wwwroot/css/ --flat"
+
+	},
+	"devDependencies": {
+		"@blazor/js": "workspace:*"
+	}
+}

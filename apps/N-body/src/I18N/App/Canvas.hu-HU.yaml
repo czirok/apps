@@ -1,0 +1,10 @@
+System: Rendszer
+Simulation: Szimuláció
+FPS: képkocka/mp
+Bodies: Testek száma
+Total mass: Teljes tömeg
+Frames: Képkockák
+
+StatLine: '{0,-16}{1}'
+StatLine2: '{0,-16}{1:#0.0} {2}'
+StatLineExp: '{0,-16}{1:E2}'

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>$(SampleTargetFramework)</TargetFramework>
+    <StaticWebAssetBasePath>/</StaticWebAssetBasePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorShared\BlazorShared.csproj" />
+    <ProjectReference Include="..\BlazorWebAppClient\BlazorWebAppClient.csproj" />
+  </ItemGroup>
+
+</Project>

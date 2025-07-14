@@ -1,0 +1,11 @@
+﻿@inject IJSRuntime JS
+@inject IPlatformService PlatformService
+@code {
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			await JS.InvokeVoidAsync($"BlazorBody.OffcanvasSwipe.initialize", "main", "sidebar", PlatformService.IsTouch);
+		}
+	}
+}

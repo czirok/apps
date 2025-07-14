@@ -1,0 +1,29 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
+@inject IStringLocalizer<Lang> L
+@inject IPlatformService PlatformService
+
+<header class="navbar navbar-expand-sm sticky-top bg-body-tertiary text-body-tertiary">
+	<nav class="container-sm flex-wrap flex-sm-nowrap">
+		<IconHamburger />
+		<NavLink class="navbar-brand p-0 me-0 me-sm-2 flex-grow-1 flex-sm-grow-0" href=""
+			aria-label="@L["Yaml Localization"]" Match="NavLinkMatch.All">
+			<IconLogo />
+		</NavLink>
+		<Sidebar />
+	</nav>
+</header>
+
+<div class="container site-gutter">
+	<main id="main" class="main pt-4">
+		@Body
+	</main>
+</div>
+
+<BackToTop Offset="200" @rendermode="PlatformService.RenderMode" />
+<SidebarSwipe @rendermode="PlatformService.RenderMode" />
+<div id="blazor-error-ui">
+	@L["An unhandled error has occurred."]
+	<a href="" class="reload">@L["Reload"]</a>
+	<a class="dismiss">🗙</a>
+</div>

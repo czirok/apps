@@ -1,0 +1,21 @@
+﻿@page "/"
+
+@using System.Diagnostics
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<p>Application took @StartupTime ms to start</p>
+
+@code {
+	long StartupTime
+	{
+		get
+		{
+			return Environment.TickCount64 - Program.StartTime;
+		}
+	}
+}

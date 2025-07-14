@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>$(SampleTargetFramework)</TargetFramework>
+    <PublishAot>true</PublishAot>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GirCore.Adw-1" />
+    <PackageReference Include="GirCore.Gtk-4.0" />
+    <PackageReference Include="Microsoft.Extensions.Localization" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" />
+    <PackageReference Include="EasyUIBinding.GirCore" />
+    <PackageReference Include="Yaml.Localization" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="I18N\*.yaml" />
+    <EmbeddedResource Exclude="I18N\cultures.yaml" Type="Non-Resx" WithCulture="false" Include="I18N\*.yaml" LogicalName="$(RootNamespace).$([System.String]::Copy('%(RelativeDir)').Replace('\','.').Replace('/','.').Replace('I18N.','CultureSample.'))$([System.String]::Copy('%(Filename)')).yaml" />
+
+    <Content Remove="I18N\cultures.yaml" />
+    <EmbeddedResource Include="I18N\cultures.yaml" LogicalName="CultureSettings.yaml" />
+  </ItemGroup>
+
+</Project>

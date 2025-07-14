@@ -1,0 +1,14 @@
+.back-to-top
+{
+  position: fixed;
+  right: -200px;
+  bottom: 56px;
+  z-index: $zindex-sticky - 1;
+  color: var(--bs-link-color);
+  @include transition(right .5s ease-in-out);
+
+  &.move
+	{
+    right: 10px;
+  }
+}

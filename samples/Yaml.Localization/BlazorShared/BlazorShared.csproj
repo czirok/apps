@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>$(SampleTargetFramework)</TargetFramework>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <StaticWebAssetBasePath>/</StaticWebAssetBasePath>
+    <PackageId>BlazorShared</PackageId>
+
+    <StaticWebAssetProjectMode>Default</StaticWebAssetProjectMode>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" />
+    <PackageReference Include="Microsoft.Extensions.Localization" />
+    <PackageReference Include="Tynamix.ObjectFiller" />
+    <PackageReference Include="Yaml.Localization" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="I18N\*.yaml" />
+    <EmbeddedResource Exclude="I18N\cultures.yaml" Type="Non-Resx" WithCulture="false" Include="I18N\*.yaml" LogicalName="$(RootNamespace).Lang.%(Filename).yaml" />
+
+    <Content Remove="I18N\cultures.yaml" />
+    <EmbeddedResource Include="I18N\cultures.yaml" LogicalName="CultureSettings.yaml" />
+  </ItemGroup>
+
+</Project>

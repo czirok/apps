@@ -1,0 +1,55 @@
+﻿@inject CultureSettings CultureSettings
+<!DOCTYPE html>
+<html lang="@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName"
+	dir="@(CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft ? "rtl" : "ltr")" data-bs-theme="auto">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<base href="/" />
+	<script>
+		window.BlazorCultureCookie = "@CultureSettings.CookieName";
+		window.BlazorLTRId = "ltr-css";
+		window.BlazorRTLId = "rtl-css";		
+	</script>
+	@if (CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft)
+	{
+		<link rel="stylesheet" href="@Assets["css/bootstrap.rtl.min.css"]" id="ltr-css" />
+	}
+	else
+	{
+		<link rel="stylesheet" href="@Assets["css/bootstrap.min.css"]" id="rtl-css" />
+	}
+	<script src="js/blazor.web.head.min.js"></script>
+	<ImportMap />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="icon" type="image/png" href="favicon.png" />
+	<HeadOutlet />
+</head>
+
+<body>
+	<Routes />
+	<script src="@Assets["js/bootstrap.bundle.min.js"]"></script>
+	<script src="@Assets["js/blazor.body.min.js"]"></script>
+	<script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>
+
+@code {
+	[CascadingParameter]
+	public HttpContext? HttpContext { get; set; }
+
+	protected override void OnInitialized()
+	{
+		HttpContext?.Response.Cookies.Append(
+		CultureSettings.CookieName,
+		CookieRequestCultureProvider.MakeCookieValue(
+		new RequestCulture(
+		CultureInfo.CurrentCulture,
+		CultureInfo.CurrentUICulture)));
+	}
+}

@@ -1,0 +1,68 @@
+.change-theme
+{
+  .nav-link
+	{
+    padding-right: $spacer * .25;
+    padding-left: $spacer * .25;
+
+    &.active
+		{
+      font-weight: 600;
+    }
+  }
+
+  .dropdown-menu
+	{
+    --bs-dropdown-min-width: 12rem;
+    --bs-dropdown-padding-x: .25rem;
+    --bs-dropdown-padding-y: .25rem;
+
+    @include rfs(.875rem, --bs-dropdown-font-size);
+    @include font-size(.875rem);
+    @include border-radius(.5rem);
+    box-shadow: $dropdown-box-shadow;
+
+    li + li
+		{
+      margin-top: .125rem;
+    }
+
+    .dropdown-item
+		{
+      @include border-radius(.25rem);
+
+      &:active
+			{
+        .bi
+				{
+          color: inherit !important; // stylelint-disable-line declaration-no-important
+
+        }
+      }
+    }
+
+    .active
+		{
+      font-weight: 600;
+
+      .bi
+			{
+        display: block !important; // stylelint-disable-line declaration-no-important
+      }
+    }
+  }
+
+  .dropdown-menu-end
+	{
+    --bs-dropdown-min-width: 8rem;
+  }
+}
+
+@include color-mode(dark)
+{
+  .xx-navbar
+	{
+    box-shadow: 0 .5rem 1rem rgba($black, .15), inset 0 -1px 0 rgba($white, .15);
+  }
+}
+

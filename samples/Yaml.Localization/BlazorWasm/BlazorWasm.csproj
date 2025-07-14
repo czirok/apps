@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>$(SampleTargetFramework)</TargetFramework>
+    <StaticWebAssetBasePath>/</StaticWebAssetBasePath>
+    <PackageId>BlazorWasm</PackageId>
+
+    <OverrideHtmlAssetPlaceholders Condition="'$(TestRuntimeFrameworkVersion)' == 'net10.0'">true</OverrideHtmlAssetPlaceholders>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../BlazorShared/BlazorShared.csproj" />
+  </ItemGroup>
+
+</Project>

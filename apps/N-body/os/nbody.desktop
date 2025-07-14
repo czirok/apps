@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=N-body simulation
+Name[hu]=N-test szimuláció
+Name[de]=N-Körper-Simulation
+GenericName=N-body simulation
+GenericName[hu]=N-test szimulátor
+GenericName[de]=N-Körper-Simulator
+Comment=Simulate multiple interacting bodies in a dynamic gravitational field
+Comment[hu]=Több egymással kölcsönható test mozgásának szimulálása gravitációs térben
+Comment[de]=Simulation mehrerer wechselwirkender Körper in einem dynamischen Gravitationsfeld
+Exec=nbody
+Icon=org.gnome.nbody
+Terminal=false
+Type=Application
+Categories=Education;Science;Physics;
+StartupNotify=true

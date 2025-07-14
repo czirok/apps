@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schemalist>
+	<schema id="org.gnome.nbody" path="/org/gnome/nbody/">
+		<key name="canvas-width" type="i">
+			<default>800</default>
+			<summary>Canvas window width</summary>
+		</key>
+		<key name="canvas-height" type="i">
+			<default>600</default>
+			<summary>Canvas window height</summary>
+		</key>
+		<key name="canvas-maximized" type="b">
+			<default>false</default>
+			<summary>Canvas window maximized state</summary>
+		</key>
+
+		<key name="settings-width" type="i">
+			<default>400</default>
+			<summary>Settings window width</summary>
+		</key>
+		<key name="settings-height" type="i">
+			<default>500</default>
+			<summary>Settings window height</summary>
+		</key>
+		<key name="settings-maximized" type="b">
+			<default>false</default>
+			<summary>Settings window maximized state</summary>
+		</key>
+	</schema>
+</schemalist>

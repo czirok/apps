@@ -1,0 +1,40 @@
+﻿@inject IJSRuntime JS
+@inject IStringLocalizer<Lang> L
+
+<button @onclick="@(async () => await JS.InvokeVoidAsync($"BlazorBody.{nameof(BackToTop)}.scrollTop"))"
+	class="back-to-top opacity-75 navbar-toggler p-2 text-primary align-baseline@_move" type="button"
+	aria-label="@L["Back to top"]">
+	<svg xmlns="http://www.w3.org/2000/svg" class="rounded-circle" viewBox="0 0 60 60" width="40" height="40">
+		<circle fill="currentColor" style="opacity:0.2" cx="30" cy="30" r="30" />
+		<path fill="currentColor"
+			d="M 27.575,19.877 Q 28.322,19.013 29.356,19.013 30.388,19.013 31.017,19.99 37.62,27.966 42.036,34.682 42.325,35.257 42.325,35.946 42.324,36.692 41.691,37.263 41.06,37.896 40.257,37.896 39.455,37.896 38.823,37.437 38.422,36.863 29.294,24.351 28.264,25.729 25.052,30.492 21.837,35.314 19.997,37.551 19.251,38.008 18.562,38.008 17.934,38.008 17.245,37.263 16.612,36.518 16.612,35.715 16.612,34.97 16.783,34.738 18.681,32.327 21.951,27.565 25.22,22.859 27.575,19.877 Z">
+		</path>
+	</svg>
+</button>
+
+@code
+{
+	[Parameter]
+	public int Offset { get; set; }
+
+	string _move = string.Empty;
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			var yValue = await JS.InvokeAsync<double>($"BlazorBody.{nameof(BackToTop)}.setReference",
+			DotNetObjectReference.Create(this));
+			await OnUpdate(yValue);
+		}
+	}
+
+	[JSInvokable]
+	public async Task OnUpdate(double yValue)
+	{
+		_move = yValue > Offset
+		? " move"
+		: string.Empty;
+		await InvokeAsync(StateHasChanged);
+	}
+}

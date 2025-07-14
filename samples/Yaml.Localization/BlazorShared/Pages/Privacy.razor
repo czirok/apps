@@ -1,0 +1,44 @@
+﻿@layout Back
+@page "/privacy"
+@using Tynamix.ObjectFiller
+
+<IconBack BackUrl="about" />
+<Title>@Input.Title</Title>
+
+@foreach (var paragraph in Input.Paragraphs)
+{
+	<p>@paragraph</p>
+}
+
+@code
+{
+	PrivacyInput Input { get; set; } = new PrivacyInput();
+
+	public class PrivacyInput
+	{
+		public string Title { get; set; } = string.Empty;
+		public List<string> Paragraphs { get; set; } = new();
+
+		public PrivacyInput()
+		{
+			var filler = new Filler<PrivacyInput>();
+
+			filler.Setup()
+			.OnProperty(x => x.Title)
+			.Use(new Lipsum(LipsumFlavor.LeMasque,
+			minWords: 1,
+			maxWords: 1,
+			minSentences: 1,
+			maxSentences: 1))
+			.OnProperty(x => x.Paragraphs)
+			.Use(new Collectionizer<string, Lipsum>(new Lipsum(LipsumFlavor.LoremIpsum,
+			minWords: 20,
+			maxWords: 200,
+			minSentences: 1,
+			maxSentences: 2,
+			paragraphs: 1), 0));
+
+			filler.Fill(this);
+		}
+	}
+}

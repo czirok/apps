@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Title>Yaml based localization</Title>
+    <Description>Yaml based embedded resource and filesystem string localization services</Description>
+    <PackageTags>localization;i18n;internationalization;yaml;yamlresource;embedded;resource;embeddedresource;file;filesystem;globalization;culture;translation;multilingual;aspnetcore;dotnet</PackageTags>
+
+    <PackageId>Yaml.Localization</PackageId>
+    <PackageProjectUrl>https://github.com/czirok/apps/src/Yaml.Localization</PackageProjectUrl>
+    <PackageVersion>10.0.0-preview.5.4</PackageVersion>
+  </PropertyGroup>
+
+  <Import Project="..\..\Nuget.Common.props" />
+
+  <ItemGroup>
+    <PackageReference Include="Vecc.YamlDotNet.Analyzers.StaticGenerator" />
+    <PackageReference Include="YamlDotNet" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

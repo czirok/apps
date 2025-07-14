@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Title>GTK4 UI components and binding utilities for GirCore</Title>
+    <Description>Provides GTK4 UI components, model binding, property change notification, and source generation support for GirCore-based Linux applications.</Description>
+    <PackageTags>gircore;gtk;gtk4;ui;widgets;binding;databinding;mvvm;controls;propertychanged;preferences;form;generator;roslyn;sourcegenerator;dotnet</PackageTags>
+
+    <PackageId>EasyUIBinding.GirCore</PackageId>
+    <PackageProjectUrl>https://github.com/czirok/apps/src/EasyUIBinding.GirCore</PackageProjectUrl>
+    <PackageVersion>0.7.0-preview.1.2</PackageVersion>
+  </PropertyGroup>
+
+  <Import Project="..\..\Nuget.Common.props" />
+
+  <ItemGroup>
+    <PackageReference Include="GirCore.Adw-1" />
+    <PackageReference Include="GirCore.Gio-2.0" />
+    <PackageReference Include="GirCore.Gtk-4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\EasyUIBinding.GirCore.Generators\src\EasyUIBinding.GirCore.Generators.csproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <OutputItemType>Analyzer</OutputItemType>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None
+      Include="..\..\EasyUIBinding.GirCore.Generators\src\bin\$(Configuration)\netstandard2.0\EasyUIBinding.GirCore.Generators.dll"
+      Pack="true"
+      PackagePath="analyzers\dotnet\cs\EasyUIBinding.GirCore.Generators.dll"
+      Visible="false"
+    />
+  </ItemGroup>
+
+  <Target Name="BuildGenerator" BeforeTargets="GenerateNuspec">
+    <MSBuild
+      Projects="..\..\EasyUIBinding.GirCore.Generators\src\EasyUIBinding.GirCore.Generators.csproj"
+      Properties="Configuration=$(Configuration)"
+    />
+  </Target>
+
+</Project>

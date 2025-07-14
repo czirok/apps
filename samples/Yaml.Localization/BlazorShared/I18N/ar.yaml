@@ -1,0 +1,57 @@
+# Generated with Claude.AI
+Yaml Localization: توطين Yaml
+Navigation menu: قائمة التنقل
+
+Home: الرئيسية
+Hello, world!: مرحبا بالعالم!
+Welcome to your new app.: مرحبا بك في تطبيقك الجديد!
+
+About: حول
+
+Counter: العداد
+'Current count: {0}': 'العدد الحالي: {0}'
+Click me: اضغط هنا
+
+Weather: الطقس
+Loading...: جاري التحميل...
+Date: التاريخ
+Temp. (C): درجة الحرارة (مئوية)
+Temp. (F): درجة الحرارة (فهرنهايت)
+Temperature in Celsius: درجة الحرارة بالمئوية
+Temperature in Fahrenheit: درجة الحرارة بالفهرنهايت
+Summary: الملخص
+Freezing: متجمد
+Bracing: منعش
+Chilly: بارد
+Cool: معتدل البرودة
+Mild: معتدل
+Warm: دافئ
+Balmy: لطيف
+Hot: حار
+Sweltering: خانق
+Scorching: حارق
+
+Culture Example 1: שפה
+
+Rendered values: القيم المعروضة
+Number: الرقم
+'{0} elements that don''t set a {1}': '{0} حقول بدون إعداد {1}'
+The following {0} elements use {1}.: الحقول التالية {0} تستخدم {1}.
+'{0} elements that set a {1}': '{0} حقول مع إعداد {1}'
+
+Change theme: تغيير المظهر
+Dark: مظلم
+Light: فاتح
+Auto: تلقائي
+
+Sorry, there's nothing at this address.: عذراً، لا يوجد شيء في هذا العنوان.
+License: رخصة
+Privacy policy: سياسة الخصوصية
+
+Menu: قائمة
+Back: رجوع
+Close: إغلاق
+Back to top: العودة إلى الأعلى
+
+An unhandled error has occurred.: حدث خطأ غير معالج.
+Reload: إعادة التحميل

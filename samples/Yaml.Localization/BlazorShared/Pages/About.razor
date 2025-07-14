@@ -1,0 +1,12 @@
+﻿@page "/about"
+@inject IStringLocalizer<Lang> L
+
+<Title>@L["About"]</Title>
+
+<div class="container d-flex flex-row flex-wrap py-4">
+	<div class="mt-2 mt-sm-0 me-auto">&copy; @DateTime.Now.Year - @L["Yaml Localization"]</div>
+	<div class="mt-2 mt-sm-0">
+		<NavLink class="me-2" href="license" arial-label="@L["License"]">@L["License"]</NavLink>
+		<NavLink class="" href="privacy" arial-label="@L["Privacy policy"]">@L["Privacy policy"]</NavLink>
+	</div>
+</div>

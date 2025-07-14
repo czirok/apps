@@ -1,0 +1,79 @@
+﻿<PageTitle>@ChildContent</PageTitle>
+@if (!OnlyHead)
+{
+	@if (Rows is { Count: > 0 })
+	{
+		<style>@((MarkupString)_style)</style>
+		<div class="position-relative w-100 d-block mt-3 mb-4 mt-sm-3 mb-sm-4 text-fade display-6">&nbsp;
+			@foreach (var item in Rows)
+			{
+				<h1 class="position-absolute w-100 top-0 start-0 m-0 p-0 text-nowrap text-uppercase display-6">@item</h1>
+			}
+		</div>
+	}
+	else
+	{
+		<h1 class="pt-3 pb-3 pt-sm-3 pb-sm-3 text-uppercase display-6">@ChildContent</h1>
+	}
+}
+
+@code
+{
+	[Parameter]
+	public RenderFragment? ChildContent { get; set; }
+
+	[Parameter]
+	public bool OnlyHead { get; set; } = false;
+
+	[Parameter]
+	public List<string>? Rows { get; set; }
+
+	[Parameter]
+	public string Seconds { get; set; } = "15";
+
+	string _style = string.Empty;
+
+	protected override void OnParametersSet()
+	{
+		if (Rows is { Count: > 0 })
+		{
+
+			var count = Rows.Count;
+			var builder = new System.Text.StringBuilder();
+
+			for (var i = 1; i <= count; i++)
+			{
+				builder.Append($".text-fade>*:nth-child({i}) {{ animation:fade{i} {Seconds}s infinite; }}");
+				builder.Append($"@keyframes fade{i} {{");
+				for (var j = 0; j <= count; j++)
+				{
+					var percent = ((float)j / count * 100).ToStringInvariant("0.00");
+					switch (i)
+					{
+						case 1 when j == 0:
+							builder.Append("0% {opacity:1}");
+							break;
+						case 1 when j == count:
+							builder.Append("100% {opacity:1}");
+							break;
+						default:
+							{
+								if (i - 1 == j && j > 0 && j < count)
+								{
+									builder.Append($"{percent}% {{opacity:1}}");
+								}
+								else
+								{
+									builder.Append($"{percent}% {{opacity:0}}");
+								}
+								break;
+							}
+					}
+				}
+				builder.Append("}");
+			}
+			_style = builder.ToString();
+			base.OnParametersSet();
+		}
+	}
+}

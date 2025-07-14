@@ -1,0 +1,49 @@
+@inject ILogger<CultureSelector> Logger
+@inject IJSRuntime JS
+@inject NavigationManager Navigation
+@inject CultureSettings CultureSettings
+@inject CultureSelectorStore Store
+@inject IStringLocalizer<Lang> L
+@inject IPlatformService PlatformService
+
+@if (_selector is { Count: > 0 })
+{
+	<div class="dropdown py-1">
+		<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+			aria-expanded="false" data-bs-display="static">
+			@_selected
+		</button>
+		<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="change-theme-text" role="tooltip"
+			@onclick:preventDefault="true">
+			@foreach (var culture in _selector)
+			{
+				<li data-x="@culture.Key">
+					<button type="button" class="dropdown-item" aria-pressed="false"
+						@onclick="@(() => ChangeCulture(new CultureInfo(culture.Key)))">
+						@culture.Value
+					</button>
+				</li>
+			}
+		</ul>
+	</div>
+}
+
+@code {
+	private Dictionary<string, string>? _selector;
+	private string? _selected;
+
+	protected override void OnInitialized()
+	{
+		_selector = CultureSettings.SpecificActiveSelector();
+		_selected = CultureSettings.SpecificSelectedCultureName();
+	}
+
+	private async void ChangeCulture(CultureInfo culture)
+	{
+		if (CultureInfo.CurrentUICulture != culture)
+		{
+			var navigateTo = await PlatformService.ChangeCultureAsync(culture, Navigation.Uri, JS);
+			Navigation.NavigateTo(navigateTo, forceLoad: true);
+		}
+	}
+}

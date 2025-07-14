@@ -1,0 +1,17 @@
+﻿@inject IStringLocalizer<Lang> L
+
+<a href="@BackUrl" class="border-0 p-0 align-baseline bg-transparent text-primary" type="button"
+	aria-label="@(L["Back"])">
+	<svg xmlns="http://www.w3.org/2000/svg" class="rounded-circle" viewBox="0 0 60 60" width="40" height="40">
+		<circle fill="currentColor" style="opacity:0.2" cx="30" cy="30" r="30" />
+		<path fill="currentColor"
+			d="M 17.048,31.893 Q 16.184,31.147 16.184,30.113 16.184,29.08 17.161,28.452 25.137,21.849 31.853,17.432 32.428,17.144 33.117,17.144 33.863,17.144 34.434,17.777 35.067,18.409 35.067,19.211 35.067,20.013 34.609,20.646 34.033,21.047 21.522,30.174 22.9,31.204 27.662,34.417 32.485,37.631 34.722,39.472 35.179,40.218 35.179,40.907 35.179,41.534 34.434,42.223 33.689,42.856 32.886,42.856 32.141,42.856 31.909,42.686 29.498,40.788 24.736,37.518 20.03,34.248 17.048,31.893 Z">
+		</path>
+	</svg>
+	<span class="d-none fs-6 pe-1">@L["Back"]</span>
+</a>
+
+@code
+{
+	[Parameter] public string? BackUrl { get; set; } = "/";
+}

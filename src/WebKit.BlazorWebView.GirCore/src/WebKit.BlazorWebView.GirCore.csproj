@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Title>Blazor WebView for Linux with WebKitGTK</Title>
+    <Description>ASP.NET Core Blazor WebView implementation for Linux desktop applications using WebKitGTK and GirCore bindings. Enables hosting Blazor components in native GTK applications without Electron.</Description>
+    <PackageTags>blazor;webview;linux;gtk;webkit;gircore;desktop;native;electron-alternative;spa;routing</PackageTags>
+
+    <PackageId>WebKit.BlazorWebView.GirCore</PackageId>
+    <PackageProjectUrl>https://github.com/czirok/apps/src/WebKit.BlazorWebView.GirCore</PackageProjectUrl>
+    <PackageVersion>10.0.0-preview.5.1</PackageVersion>
+  </PropertyGroup>
+
+  <Import Project="..\..\Nuget.Common.props" />
+
+  <ItemGroup>
+    <PackageReference Include="GirCore.Gtk-4.0" />
+    <PackageReference Include="GirCore.WebKit-6.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" />
+    <PackageReference Include="MimeTypes">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

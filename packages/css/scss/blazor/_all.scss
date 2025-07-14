@@ -1,0 +1,70 @@
+$transition-time: .3s !default;
+$transition-effect: linear !default;
+$transition: all $transition-effect $transition-time !default;
+
+@import "main";
+@import "back-to-top";
+@import "back";
+@import "blazor";
+@import "callouts";
+@import "change-theme";
+@import "close";
+@import "hamburger";
+@import "text-fade";
+
+.markdown {
+  .definition {
+    padding: .2em .4em;
+    margin: 0;
+    font-size: 85%;
+    color: var(--bs-secondary-color);
+    white-space: break-spaces;
+    background-color: var(--bs-secondary-bg);
+    @include border-radius(6px);
+  }
+}
+
+.nav-item-hover {
+  a {
+    color: var(--bs-body-color);
+    text-decoration: if($link-decoration == none, null, none);
+
+    &:hover,
+    &:focus {
+      color: var(--bs-emphasis-color);
+      text-decoration: if($link-hover-decoration == underline, none, null);
+      background-color: var(--bs-dark-bg-subtle);
+    }
+  }
+}
+
+
+.bi
+{
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -.125em;
+  fill: currentcolor;
+}
+
+.footer-bottom {
+  margin-bottom: 200px;
+}
+
+.svg-hide {
+  position: absolute;
+  left: -100;
+  width: 0;
+  height: 0;
+}
+
+h1:focus-visible,
+h2:focus-visible,
+h3:focus-visible,
+h4:focus-visible,
+h5:focus-visible,
+h6:focus-visible {
+  outline: none;
+  box-shadow: none;
+}

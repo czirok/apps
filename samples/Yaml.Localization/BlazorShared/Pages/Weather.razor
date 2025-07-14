@@ -1,0 +1,67 @@
+﻿@page "/weather"
+
+@attribute [StreamRendering]
+@inject IStringLocalizer<Lang> L
+
+<PageTitle>@L["Weather"]</PageTitle>
+
+<h1>@L["Weather"]</h1>
+
+@if (forecasts == null)
+{
+	<p><em>@L["Loading..."]</em></p>
+}
+else
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>@L["Date"]</th>
+				<th aria-label="@L["Temperature in Celsius"]">@L["Temp. (C)"]</th>
+				<th aria-label="@L["Temperature in Fahrenheit"]">@L["Temp. (F)"]</th>
+				<th>@L["Summary"]</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var forecast in forecasts)
+			{
+				<tr>
+					<td>@forecast.Date.ToShortDateString()</td>
+					<td>@forecast.TemperatureC</td>
+					<td>@forecast.TemperatureF</td>
+					<td>@forecast.Summary</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+
+@code {
+	private WeatherForecast[]? forecasts;
+
+	protected override async Task OnInitializedAsync()
+	{
+		// Simulate asynchronous loading to demonstrate streaming rendering
+		await Task.Delay(500);
+
+		var startDate = DateOnly.FromDateTime(DateTime.Now);
+		string[] summaries =
+		[
+		L["Freezing"],L["Bracing"],L["Chilly"],L["Cool"],L["Mild"],L["Warm"],L["Balmy"],L["Hot"],L["Sweltering"],L["Scorching"]
+		];
+		forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+		{
+			Date = startDate.AddDays(index),
+			TemperatureC = Random.Shared.Next(-20, 55),
+			Summary = summaries[Random.Shared.Next(summaries.Length)]
+		}).ToArray();
+	}
+
+	private class WeatherForecast
+	{
+		public DateOnly Date { get; set; }
+		public int TemperatureC { get; set; }
+		public string? Summary { get; set; }
+		public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+	}
+}

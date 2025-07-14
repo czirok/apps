@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Title>MAUI Graphics with SkiaSharp for GTK</Title>
+    <Description>Microsoft.Maui.Graphics implementation using SkiaSharp for GTK4 applications. Provides GirCoreSkiaGraphicsView widget with IDrawable support for cross-platform graphics API in Linux desktop applications with hardware-accelerated rendering.</Description>
+    <PackageTags>maui;graphics;skiasharp;gtk;cross-platform;drawing;shapes;canvas;gircore;linux;desktop;vector-graphics;idrawable;widget;renderer</PackageTags>
+
+    <PackageId>Gtk.MauiGraphicsSkia.GirCore</PackageId>
+    <PackageProjectUrl>https://github.com/czirok/apps/src/Gtk.MauiGraphicsSkia.GirCore</PackageProjectUrl>
+    <PackageVersion>10.0.0-preview.5</PackageVersion>
+  </PropertyGroup>
+
+  <Import Project="..\..\Nuget.Common.props" />
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Maui.Graphics" />
+    <PackageReference Include="Microsoft.Maui.Graphics.Skia" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../SkiaSharp.Views.GirCore/src/SkiaSharp.Views.GirCore.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,17 @@
+﻿@inherits LayoutComponentBase
+@inject IStringLocalizer<Lang> L
+@inject IPlatformService PlatformService
+
+<div class="container site-gutter">
+	<main id="main" class="main pt-4">
+		@Body
+	</main>
+</div>
+
+<BackToTop Offset="200" @rendermode="PlatformService.RenderMode" />
+
+<div id="blazor-error-ui">
+	@L["An unhandled error has occurred."]
+	<a href="" class="reload">@L["Reload"]</a>
+	<a class="dismiss">🗙</a>
+</div>

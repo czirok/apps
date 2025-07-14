@@ -1,0 +1,10 @@
+System: System
+Simulation: Simulation
+FPS: FPS
+Bodies: Körper
+Total mass: Gesamtmasse
+Frames: Frames
+
+StatLine: '{0,-13}{1}'
+StatLine2: '{0,-13}{1:#0.0} {2}'
+StatLineExp: '{0,-13}{1:E2}'

@@ -1,0 +1,29 @@
+<Project>
+
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="GirCore.Adw-1" Version="0.7.0-preview.1" />
+    <PackageVersion Include="GirCore.Cairo-1.0" Version="0.7.0-preview.1" />
+    <PackageVersion Include="GirCore.GdkPixbuf-2.0" Version="0.7.0-preview.1" />
+    <PackageVersion Include="GirCore.Graphene-1.0" Version="0.7.0-preview.1" />
+    <PackageVersion Include="GirCore.Gtk-4.0" Version="0.7.0-preview.1" />
+
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="9.0.6" />
+    <PackageVersion Include="Microsoft.Extensions.Localization" Version="9.0.6" />
+    <PackageVersion Include="Microsoft.Extensions.Logging" Version="9.0.6" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="9.0.6" />
+
+    <PackageVersion Include="SkiaSharp" Version="3.119.0" />
+    <PackageVersion Include="SkiaSharp.NativeAssets.Linux" Version="3.119.0" />
+    <PackageVersion Include="SkiaSharp.Views.Desktop.Common" Version="3.119.0" />
+
+    <PackageVersion Include="EasyUIBinding.GirCore" Version="0.7.0-preview.1.2" />
+    <PackageVersion Include="Gtk.MauiGraphicsSkia.GirCore" Version="10.0.0-preview.5" />
+    <PackageVersion Include="Yaml.Localization" Version="10.0.0-preview.5.4" />
+
+  </ItemGroup>
+
+</Project>

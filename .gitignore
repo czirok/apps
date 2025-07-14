@@ -1,0 +1,31 @@
+# Visual Studio Code
+.vscode/.extensions
+.vscode/.user.data
+.vscode/.linux/.dotnet
+.vscode/.linux/.bash_history
+.vscode/.linux/dotnet-install.sh
+.vscode/.linux/oh-my-posh
+
+apps/N-body/publish
+
+# Linux packages
+**/os/arch
+**/os/deb
+**/os/rpm
+**/os/flatpak
+**/os/targz
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+
+
+samples/publish
+
+test/Yaml.Localization/Benchmark/BenchmarkDotNet.Artifacts
+
+**/node_modules/
+**/dist
+

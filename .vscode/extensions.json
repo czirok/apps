@@ -1,0 +1,21 @@
+{
+	"recommendations": [
+		"ms-dotnettools.vscode-dotnet-runtime",
+		"ms-dotnettools.csharp",
+		"ms-dotnettools.csdevkit",
+		"ms-dotnettools.dotnet-maui",
+		"naumovs.color-highlight",
+		"dbaeumer.vscode-eslint",
+		"degreat.fonted",
+		"github.copilot",
+		"github.copilot-chat",
+		"stylelint.vscode-stylelint",
+		"vscode-icons-team.vscode-icons",
+		"oderwat.indent-rainbow",
+		"gruntfuggly.todo-tree",
+		"davidanson.vscode-markdownlint",
+		"editorconfig.editorconfig",
+		"heaths.vscode-guid",
+		"editorconfig.editorconfig"
+	]
+}

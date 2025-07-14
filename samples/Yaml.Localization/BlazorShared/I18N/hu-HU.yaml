@@ -1,0 +1,57 @@
+# Generated with Claude.AI
+Yaml Localization: Yaml Lokalizáció
+Navigation menu: Navigációs menü
+
+Home: Főoldal
+Hello, world!: Hello Világ!
+Welcome to your new app.: Üdvözöllek az új alkalmazásban!
+
+About: Rólunk
+
+Counter: Számláló
+'Current count: {0}': 'Jelenlegi számláló: {0}'
+Click me: Kattints ide
+
+Weather: Időjárás
+This component  showing data.: Ez az összetevő bemutatja az adatok megjelenítését.
+Loading...: Betöltés...
+Date: Dátum
+Temp. (C): Hőmérséklet (C)
+Temp. (F): Hőmérséklet (F)
+Temperature in Celsius: Hőmérséklet Celsiusban
+Temperature in Fahrenheit: Hőmérséklet Fahrenheitban
+Summary: Összefoglaló
+Freezing: Fagyos
+Bracing: Élénkítő
+Chilly: Hűvös
+Cool: Hideg
+Mild: Enyhe
+Warm: Meleg
+Balmy: Kellemes
+Hot: Forró
+Sweltering: Tikkasztó
+Scorching: Perzselő
+
+Culture Example 1: Nyelv
+Rendered values: Megjelenített értékek
+Number: Szám
+'{0} elements that don''t set a {1}': '{0} mező {1} beállítás nélkül'
+The following {0} elements use {1}.: A következő {0} mezők a {1} beállítást használják.
+'{0} elements that set a {1}': '{0} mező {1} beállítással'
+
+Change theme: Téma váltása
+Dark: Sötét
+Light: Világos
+Auto: Automatikus
+
+Sorry, there's nothing at this address.: Sajnáljuk, ezen az oldalon nincs semmi
+License: Licenc
+Privacy policy: Adatvédelmi irányelvek
+
+Menu: Menü
+Back: Vissza
+Close: Bezárás
+Back to top: Vissza a tetejére
+
+An unhandled error has occurred.: Egy nem kezelt hiba történt.
+Reload: Újratöltés

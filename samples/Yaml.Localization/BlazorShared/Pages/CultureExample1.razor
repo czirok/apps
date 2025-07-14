@@ -1,0 +1,60 @@
+@page "/culture-example-1"
+@inject IStringLocalizer<Lang> L
+
+@using System.Globalization
+@using System.Collections.ObjectModel
+
+<h1>@L["Culture Example 1"]</h1>
+
+<ul class="list-group list-group-flush">
+	<li class="list-group-item"><b>CurrentCulture</b>: @CultureInfo.CurrentCulture</li>
+	<li class="list-group-item"><b>CurrentUICulture</b>: @CultureInfo.CurrentUICulture</li>
+</ul>
+
+<h2>@L["Rendered values"]</h2>
+
+<ul class="list-group list-group-flush">
+	<li class="list-group-item"><b>@L["Date"]</b>: @dt</li>
+	<li class="list-group-item"><b>@L["Number"]</b>: @number.ToString("N2")</li>
+</ul>
+
+<h2>@((MarkupString)L["{0} elements that don't set a {1}", "<code>&lt;input&gt;</code>", "<code>type</code>"].Value)
+</h2>
+
+<form class="row g-3">
+	<fieldset>
+		<legend>@((MarkupString)L["The following {0} elements use {1}.", "<code>&lt;input&gt;</code>",
+						"<code>CultureInfo.CurrentCulture</code>"].Value)</legend>
+		<div class="col-md-6">
+			<label for="date1" class="form-label">@L["Date"]</label>
+			<input @bind="dt" class="form-control" id="date1">
+		</div>
+		<div class="col-md-6">
+			<label for="number1" class="form-label">@L["Number"]</label>
+			<input @bind="number" class="form-control" id="number1">
+		</div>
+	</fieldset>
+</form>
+
+<form class="row g-3">
+	<fieldset>
+		<legend>@((MarkupString)L["The following {0} elements use {1}.", "<code>&lt;input&gt;</code>",
+						"<code>CultureInfo.CurrentUICulture</code>"].Value)</legend>
+		<div class="col-md-6">
+			<label for="date2" class="form-label">@L["Date"]</label>
+			<input type="date" @bind="dt" class="form-control" id="date2">
+		</div>
+		<div class="col-md-6">
+			<label for="number2" class="form-label">@L["Number"]</label>
+			<input type="number" @bind="number" class="form-control" id="number2">
+		</div>
+	</fieldset>
+</form>
+
+@code {
+	private DateTime dt = DateTime.Now;
+	private double number = 1999.69;
+
+	ReadOnlyCollection<TimeZoneInfo> zones = TimeZoneInfo.GetSystemTimeZones();
+
+}

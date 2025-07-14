@@ -1,0 +1,55 @@
+Yaml Localization: Yaml Localization
+Navigation menu: Navigation menu
+
+Home: Home
+Hello, world!: Hello, world!
+Welcome to your new app.: Welcome to your new app!
+
+About: About
+
+Counter: Counter
+'Current count: {0}': 'Current count: {0}'
+Click me: Click me
+
+Weather: Weather
+Loading...: Loading...
+Date: Date
+Temp. (C): Temp. (C)
+Temp. (F): Temp. (F)
+Temperature in Celsius: Temperature in Celsius
+Temperature in Fahrenheit: Temperature in Fahrenheit
+Summary: Summary
+Freezing: Freezing
+Bracing: Bracing
+Chilly: Chilly
+Cool: Cool
+Mild: Mild
+Warm: Warm
+Balmy: Balmy
+Hot: Hot
+Sweltering: Sweltering
+Scorching: Scorching
+
+Culture Example 1: Culture
+Rendered values: Rendered values
+Number: Number
+'{0} elements that don''t set a {1}': '{0} elements that don''t set a {1}'
+The following {0} elements use {1}.: The following {0} elements use {1}.
+'{0} elements that set a {1}': '{0} elements that set a {1}'
+
+Change theme: Change theme
+Dark: Dark
+Light: Light
+Auto: Auto
+
+Sorry, there's nothing at this address.: Sorry, there's nothing at this address.
+License: License
+Privacy policy: Privacy policy
+
+Menu: Menu
+Back: Back
+Close: Close
+Back to top: Back to top
+
+An unhandled error has occurred.: An unhandled error has occurred.
+Reload: Reload

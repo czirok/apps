@@ -1,0 +1,12 @@
+﻿@inject IStringLocalizer<Lang> L
+
+<button class="d-flex p-0 align-baseline d-sm-none border-0 bg-transparent text-primary" type="button"
+	data-bs-dismiss="offcanvas" data-bs-target="#sidebar" aria-label="@(L["Close"])">
+	<svg xmlns="http://www.w3.org/2000/svg" class="rounded-circle" viewBox="0 0 60 60" width="40" height="40">
+		<circle fill="currentColor" style="opacity:0.4" cx="30" cy="30" r="30" />
+		<path fill="currentColor"
+			d="M 20.83,20 C 20.63,20 20.41,20.08 20.25,20.24 V 20.25 20.25 C 19.92,20.57 19.92,21.09 20.25,21.41 L 28.89,30.04 20.31,38.66 C 19.97,39.09 20.09,39.45 20.39,39.73 20.67,40.01 21.03,40.14 21.47,39.79 L 30.05,31.21 38.63,39.77 C 39.07,40.07 39.41,39.95 39.69,39.69 39.95,39.41 40.07,39.07 39.77,38.64 L 31.22,30.04 39.79,21.46 C 40.14,21.02 40.01,20.66 39.73,20.38 39.45,20.09 39.09,19.97 38.65,20.3 L 30.05,28.88 21.42,20.24 C 21.25,20.08 21.05,20 20.83,20 Z">
+		</path>
+	</svg>
+	<span class="d-none fs-6 pe-1">@L["Close"]</span>
+</button>

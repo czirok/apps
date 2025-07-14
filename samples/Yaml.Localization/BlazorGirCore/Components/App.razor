@@ -1,0 +1,36 @@
+﻿@namespace BlazorGirCore.Components
+@inject IStringLocalizer<Lang> L
+@inject IJSRuntime JS
+@inject CultureSettings CultureSettings
+@if (_initialized)
+{
+	<Router AppAssembly="@typeof(BlazorShared.Lang).Assembly">
+		<Found Context="routeData">
+			<RouteView RouteData="@routeData" DefaultLayout="@typeof(BlazorShared.Layout.Body)" />
+			<FocusOnNavigate RouteData="@routeData" Selector="h1" />
+		</Found>
+		<NotFound>
+			<PageTitle>Not found</PageTitle>
+			<LayoutView Layout="@typeof(BlazorShared.Layout.Body)">
+				<p role="alert">@L["Sorry, there's nothing at this address."]</p>
+			</LayoutView>
+		</NotFound>
+	</Router>
+}
+@code {
+	bool _initialized;
+
+	protected override async Task OnInitializedAsync()
+	{
+		var culture = await JS.InvokeAsync<string>($"BlazorHead.CultureSelector.getStorage") ??
+		CultureSettings.DefaultCultureName;
+
+		CultureInfo.DefaultThreadCurrentCulture =
+		CultureInfo.DefaultThreadCurrentUICulture =
+		CultureInfo.CurrentCulture =
+		CultureInfo.CurrentUICulture = culture.ToSpecificCulture();
+
+		_initialized = true;
+		await base.OnInitializedAsync();
+	}
+}
