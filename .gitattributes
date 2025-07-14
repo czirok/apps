@@ -1,0 +1,35 @@
+# Exclude Bootstrap vendor files from language detection
+packages/css/dist/* linguist-vendored=true
+packages/css/package.json linguist-vendored=true
+packages/css/postcss.config.mjs linguist-vendored=true
+
+# Exclude all Bootstrap SCSS files (keep only custom Blazor ones)
+packages/css/scss/_*.scss linguist-vendored=true
+packages/css/scss/bootstrap.scss linguist-vendored=true
+packages/css/scss/forms/* linguist-vendored=true
+packages/css/scss/helpers/* linguist-vendored=true
+packages/css/scss/mixins/* linguist-vendored=true
+packages/css/scss/utilities/* linguist-vendored=true
+packages/css/scss/vendor/* linguist-vendored=true
+
+# Mark custom Blazor SCSS as part of the project (these are YOUR files)
+packages/css/scss/blazor/* linguist-vendored=false
+
+# Mark TypeScript as part of the project
+packages/js/src/* linguist-vendored=false
+
+# Exclude JS build artifacts
+packages/js/dist/* linguist-vendored=true
+packages/js/package.json linguist-vendored=true
+packages/js/rollup.ts linguist-vendored=true
+
+# Mark YAML as part of the project (localization files)
+*.yaml linguist-vendored=false
+*.yml linguist-vendored=false
+
+# Mark HTML as part of the project (Blazor templates, index files)
+*.html linguist-vendored=false
+
+# Force C# detection for main languages
+*.cs linguist-language=C#
+*.razor linguist-language=C#
