@@ -1,8 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="GirCore.Adw-1" />
     <PackageReference Include="SkiaSharp" />
@@ -10,4 +12,5 @@
     <PackageReference Include="SkiaSharp.NativeAssets.Linux" />
     <PackageReference Include="SkiaSharp.Views.GirCore" />
   </ItemGroup>
+
 </Project>

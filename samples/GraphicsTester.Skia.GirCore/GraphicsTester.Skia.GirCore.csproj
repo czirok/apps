@@ -3,10 +3,6 @@
   <PropertyGroup>
     <TargetFramework>$(SampleTargetFramework)</TargetFramework>
     <OutputType>Exe</OutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <RootNamespace>GraphicsTester.Skia.GirCore</RootNamespace>
-    <PackageId>GraphicsTester.Skia.GirCore</PackageId>
-    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>

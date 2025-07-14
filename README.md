@@ -27,3 +27,25 @@
 ## Samples
 
 See the [samples](/samples/README.md) directory for various examples of using the libraries.
+
+## GirCore + AOT = Blazing Fast
+
+All samples compile to **native executables** with .NET AOT:
+
+```bash
+cd samples && chmod +x ./aot.sh && ./aot.sh
+```
+
+### Impressive result
+
+```bash
+4561024 bytes 4.4M EasyUIBinding
+6857808 bytes 6.6M GirCoreApp
+5257888 bytes 5.1M GraphicsTester.Skia.GirCore
+9030712 bytes 8.7M libSkiaSharp.so
+3393616 bytes 3.3M QuickStart1
+```
+
+- Instant startup - no JIT compilation
+- Self-contained - no .NET runtime required
+- Small footprint - optimized native code
