@@ -1,0 +1,33 @@
+Gomoku: Gomoku
+
+Settings: Settings
+Thinking time (sec): Thinking time (sec)
+Board size: Board size
+Game mode: Game mode
+You start: You start
+AI starts: AI starts
+New game: New game
+
+Thinking: Thinking...
+You lost: You lost
+You won: You won
+You move: You move
+Undo/Redo: Undo/Redo
+
+Languages: Languages
+
+Board theme: Board style
+Wood with stones: Wooden board with stones
+Paper and pencil: Paper and pencil
+
+Copy Gomoku AI protocol: Copy Gomoku AI protocol
+
+WARNING! The game is restarting!: WARNING! The game is restarting!
+
+About: About Gomoku
+About Comment: |
+  This Gomoku game is based on the winning engine from Microsoft's 2003 programming competition.
+
+  The original C++ Pela engine was created by Petr Laštovička and later converted to C# during the Microsoft competition. The goal of the competition was to create the best Gomoku engine, where the winner received 100,000 Czech crowns.
+
+  This modern GTK4/Libadwaita implementation maintains the original game logic but with a contemporary user interface for Linux systems.

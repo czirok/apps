@@ -1,0 +1,33 @@
+Gomoku: Gomoku
+
+Settings: Einstellungen
+Thinking time (sec): Bedenkzeit (Sek)
+Board size: Brettgröße
+Game mode: Spielmodus
+You start: Sie beginnen
+AI starts: KI beginnt
+New game: Neues Spiel
+
+Thinking: Denke nach...
+You lost: Sie haben verloren
+You won: Sie haben gewonnen
+You move: Ihr Zug
+Undo/Redo: Rückgängig/Wiederholen
+
+Languages: Sprachen
+
+Board theme: Brett-Stil
+Wood with stones: Holzbrett mit Steinen
+Paper and pencil: Papier und Bleistift
+
+Copy Gomoku AI protocol: Gomoku KI-Protokoll kopieren
+
+WARNING! The game is restarting!: WARNUNG! Das Spiel wird neu gestartet!
+
+About: Über Gomoku
+About Comment: |
+  Dieses Gomoku-Spiel basiert auf der Gewinner-Engine des Microsoft-Programmierwettbewerbs von 2003.
+
+  Die ursprüngliche C++ Pela-Engine wurde von Petr Laštovička erstellt und später während des Microsoft-Wettbewerbs nach C# konvertiert. Das Ziel des Wettbewerbs war es, die beste Gomoku-Engine zu entwickeln, wobei der Gewinner 100.000 tschechische Kronen erhielt.
+
+  Diese moderne GTK4/Libadwaita-Implementierung behält die ursprüngliche Spiellogik bei, bietet aber eine zeitgemäße Benutzeroberfläche für Linux-Systeme.

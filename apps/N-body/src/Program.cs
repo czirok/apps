@@ -7,7 +7,7 @@ using System.Runtime.Versioning;
 internal class Program
 {
 	internal const string ApplicationId = "org.gnome.nbody";
-	internal const string ApplicationVersion = "1.2.0";
+	internal const string ApplicationVersion = "1.2.1";
 
 	private static void Main(string[] _)
 	{

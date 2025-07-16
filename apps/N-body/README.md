@@ -29,19 +29,19 @@ Packages tested on:
 
 |OS|Version|
 |---|---|
-|Arch Linux (latest)|[nbody-1.2.0-1-x86_64.pkg.tar.zst](https://github.com/czirok/apps/releases/download/v2025.07.14-apps/nbody-1.2.0-1-x86_64.pkg.tar.zst)|
-|Debian Bookworm (12)|[nbody_1.2.0_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.14-apps/nbody_1.2.0_amd64.deb)|
-|Ubuntu Plucky Puffin (25.04)|[nbody_1.2.0_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.14-apps/nbody_1.2.0_amd64.deb)|
-|Fedora Adams (42)|[nbody-1.2.0-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.14-apps/nbody-1.2.0-1.x86_64.rpm)|
-|OpenSUSE Tumbleweed (latest)|[nbody-1.2.0-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.14-apps/nbody-1.2.0-1.x86_64.rpm)|
-|Portable (tar.gz)|[nbody-1.2.0-x86_64.tar.gz](https://github.com/czirok/apps/releases/download/v2025.07.14-apps/nbody-1.2.0-x86_64.tar.gz)|
+|Arch Linux (latest)|[nbody-1.2.1-1-x86_64.pkg.tar.zst](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-1-x86_64.pkg.tar.zst)|
+|Debian Bookworm (12)|[nbody_1.2.1_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody_1.2.1_amd64.deb)|
+|Ubuntu Plucky Puffin (25.04)|[nbody_1.2.1_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody_1.2.1_amd64.deb)|
+|Fedora Adams (42)|[nbody-1.2.1-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-1.x86_64.rpm)|
+|OpenSUSE Tumbleweed (latest)|[nbody-1.2.1-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-1.x86_64.rpm)|
+|Portable (tar.gz)|[nbody-1.2.1-x86_64.tar.gz](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-x86_64.tar.gz)|
 
 Flatpak package tested on:
 
 |OS|Version|
 |---|---|
-|Ubuntu Noble Numbat (24.04)|[nbody-1.2.0-x86_64.flatpak](https://github.com/czirok/apps/releases/download/v2025.07.14-apps/nbody-1.2.0-x86_64.flatpak)|
-|CentOS Stream 10|[nbody-1.2.0-x86_64.flatpak](https://github.com/czirok/apps/releases/download/v2025.07.14-apps/nbody-1.2.0-x86_64.flatpak)|
+|Ubuntu Noble Numbat (24.04)|[nbody-1.2.1-x86_64.flatpak](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-x86_64.flatpak)|
+|CentOS Stream 10|[nbody-1.2.1-x86_64.flatpak](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-x86_64.flatpak)|
 
 ## Installation
 
@@ -49,23 +49,23 @@ Flatpak package tested on:
 
 |OS|Package|
 |---|---|
-|**Arch Linux:**|`sudo pacman -U nbody-1.2.0-1-x86_64.pkg.tar.zst`|
-|**Debian/Ubuntu:**|`sudo dpkg -i nbody_1.2.0_amd64.deb`|
-|**Fedora:**|`sudo dnf install nbody-1.2.0-1.x86_64.rpm`|
-|**openSUSE:**|`sudo zypper install nbody-1.2.0-1.x86_64.rpm`|
-|**Flatpak:**|`flatpak install nbody-1.2.0-x86_64.flatpak`|
+|**Arch Linux:**|`sudo pacman -U nbody-1.2.1-1-x86_64.pkg.tar.zst`|
+|**Debian/Ubuntu:**|`sudo dpkg -i nbody_1.2.1_amd64.deb`|
+|**Fedora:**|`sudo dnf install nbody-1.2.1-1.x86_64.rpm`|
+|**openSUSE:**|`sudo zypper install --allow-unsigned-rpm nbody-1.2.1-1.x86_64.rpm`|
+|**Flatpak:**|`flatpak install nbody-1.2.1-x86_64.flatpak`|
 
 **tar.gz (portable):**
 
 Install `cairo libadwaita gdk-pixbuf2` dependencies, then:
 
   ```bash
-  tar -xzf nbody-1.2.0-x86_64.tar.gz
-  cd nbody-1.2.0
-  ./nbody                                        # Direct run
-  ./install-desktop-and-icon-file-to-home.sh     # Add to applications menu
-  ```
-  
+  tar -xzf nbody-1.2.1-x86_64.tar.gz
+  cd nbody-1.2.1
+  ./install-to-home.sh
+  ./nbody
+```
+
 ### Package Removal
 
 |OS|Command|
@@ -81,8 +81,16 @@ Install `cairo libadwaita gdk-pixbuf2` dependencies, then:
 
 .NET 9.0 Runtime is required to run. To build the project, you can use the following command:
 
+> [!IMPORTANT]
+> After clone, you need copy the `org.gnome.nbody.gschema.xml` file to `$HOME/.local/share/glib-2.0/schemas` and run `glib-compile-schemas $HOME/.local/share/glib-2.0/schemas` to update the schema cache.
+
 ```bash
 git clone https://github.com/czirok/apps.git
+
+# copy and build schema
+cp apps/N-body/os/org.gnome.nbody.gschema.xml $HOME/.local/share/glib-2.0/schemas
+glib-compile-schemas $HOME/.local/share/glib-2.0/schemas
+
 cd apps/N-body/src
 dotnet restore
 dotnet run
@@ -95,6 +103,7 @@ cd apps/N-body/src
 dotnet restore
 dotnet publish -p:PublishProfile=Release.pubxml
 cd ../publish
+ls -lh
 ```
 
 The resulting binary is a fully self-contained, Ahead-of-Time compiled Linux desktop app. No .NET runtime is required to run it. Total app size (including everything):

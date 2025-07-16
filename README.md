@@ -12,17 +12,17 @@
 
 ## Applications
 
-[N-body simulation](/apps/N-body/README.md) built with GirCore and Maui Graphics.
+### N-body
+
+[N-body simulation](/apps/N-body/README.md) built with GirCore and Maui Graphics. Packages are available for [Arch](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-1-x86_64.pkg.tar.zst), [DEB](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody_1.2.1_amd64.deb), [RPM](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-1.x86_64.rpm), [Flatpak](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-x86_64.flatpak), and as a [portable tar.gz](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-x86_64.tar.gz).
 
 ![N-body simulation](/apps/N-body/n-body.gif)
 
-### Available Packages
+### Pela Gomoku
 
-- [nbody-1.2.0-1-x86_64.pkg.tar.zst](https://github.com/czirok/apps/releases/download/v2025.07.14-apps/nbody-1.2.0-1-x86_64.pkg.tar.zst)
-- [nbody_1.2.0_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.14-apps/nbody_1.2.0_amd64.deb)
-- [nbody-1.2.0-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.14-apps/nbody-1.2.0-1.x86_64.rpm)
-- [nbody-1.2.0-x86_64.flatpak](https://github.com/czirok/apps/releases/download/v2025.07.14-apps/nbody-1.2.0-x86_64.flatpak)
-- [nbody-1.2.0-x86_64.tar.gz](https://github.com/czirok/apps/releases/download/v2025.07.14-apps/nbody-1.2.0-x86_64.tar.gz)
+[Pela Gomoku](/apps/Gomoku/README.md) - built with GirCore and Maui Graphics. Packages are available for [Arch](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/pelagomoku-1.0.0-1-x86_64.pkg.tar.zst), [DEB](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/pelagomoku_1.0.0_amd64.deb), [RPM](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/pelagomoku-1.0.0-1.x86_64.rpm), [Flatpak](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/pelagomoku-1.0.0-x86_64.flatpak), and as a [portable tar.gz](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/pelagomoku-1.0.0-x86_64.tar.gz).
+
+![Pela Gomoku](/apps/Gomoku/gomoku.png)
 
 ## Samples
 

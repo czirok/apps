@@ -1,0 +1,83 @@
+pkgname={{APP_NAME}}
+pkgver={{VERSION}}
+pkgrel=1
+pkgdesc="{{DESCRIPTION}}"
+arch=('x86_64')
+url="{{URL}}"
+license=('{{LICENSE}}')
+depends=('cairo' 'libadwaita' 'gdk-pixbuf2')
+
+source=(
+    "LICENSE"
+    "{{APP_NAME}}"
+    "{{APP_NAME}}.desktop" 
+    "{{APP_NAME}}.svg"
+    "libSkiaSharp.so"
+    "appsettings.json"
+    "org.gnome.{{APP_NAME}}.gschema.xml"
+    "I18N.tar.gz"
+)
+
+sha256sums=(
+    'SKIP'
+    'SKIP'
+    'SKIP'
+    'SKIP'
+    'SKIP'
+    'SKIP'
+    'SKIP'
+    'SKIP'
+)
+
+package() {
+    # Create app directory
+    mkdir -p "$pkgdir/usr/share/{{APP_NAME}}/I18N/App"
+
+    # Copy license
+    install -Dm644 "$srcdir/LICENSE" "$pkgdir/usr/share/{{APP_NAME}}/LICENSE"
+
+    # Executable
+    install -Dm755 "$srcdir/{{APP_NAME}}" "$pkgdir/usr/share/{{APP_NAME}}/{{APP_NAME}}"
+
+    # Desktop and icon files
+    install -Dm644 "$srcdir/{{APP_NAME}}.desktop" "$pkgdir/usr/share/applications/org.gnome.{{APP_NAME}}.desktop"
+    install -Dm644 "$srcdir/{{APP_NAME}}.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/org.gnome.{{APP_NAME}}.svg"
+
+    # Library
+    install -Dm644 "$srcdir/libSkiaSharp.so" "$pkgdir/usr/share/{{APP_NAME}}/libSkiaSharp.so"
+
+    # Configuration
+    install -Dm644 "$srcdir/appsettings.json" "$pkgdir/usr/share/{{APP_NAME}}/appsettings.json"
+
+    # GSettings schema
+    install -Dm644 "$srcdir/org.gnome.{{APP_NAME}}.gschema.xml" "$pkgdir/usr/share/glib-2.0/schemas/org.gnome.{{APP_NAME}}.gschema.xml"
+
+    # I18N files - culture settings
+    tar -xf "$srcdir/I18N.tar.gz" -C "$pkgdir/usr/share/{{APP_NAME}}/"
+    
+    # Wrapper script /usr/bin/{{APP_NAME}}
+    mkdir -p "$pkgdir/usr/bin"
+    cat > "$pkgdir/usr/bin/{{APP_NAME}}" << 'EOF'
+#!/bin/bash
+exec /usr/share/{{APP_NAME}}/{{APP_NAME}} "$@"
+EOF
+    chmod 755 "$pkgdir/usr/bin/{{APP_NAME}}"
+}
+
+post_install() {
+    echo "Updating icon cache..."
+    gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor
+    echo "Compiling GSettings schemas..."
+    glib-compile-schemas /usr/share/glib-2.0/schemas
+}
+
+post_upgrade() {
+    post_install
+}
+
+post_remove() {
+    echo "Updating icon cache..."
+    gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor
+    echo "Compiling GSettings schemas..."
+    glib-compile-schemas /usr/share/glib-2.0/schemas
+}

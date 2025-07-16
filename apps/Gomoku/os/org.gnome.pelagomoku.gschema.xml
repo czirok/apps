@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schemalist>
+	<schema id="org.gnome.pelagomoku" path="/org/gnome/pelagomoku/">
+		<key name="app-width" type="i">
+			<default>720</default>
+			<summary>Application window width</summary>
+		</key>
+		<key name="app-height" type="i">
+			<default>840</default>
+			<summary>Application window height</summary>
+		</key>
+		<key name="app-maximized" type="b">
+			<default>false</default>
+			<summary>Application window maximized state</summary>
+		</key>
+	</schema>
+</schemalist>

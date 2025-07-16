@@ -79,7 +79,7 @@
 		"**/os/deb": true,
 		"**/os/rpm": true,
 		"**/os/flatpak": true,
-		"**/os/targz": true,
+		"**/os/targz": true
 	},
 	"files.exclude": {
 		// Visual Studio
@@ -94,13 +94,7 @@
 		"**/obj": true,
 		"**/*.csproj.user": true,
 		//  NodeJS
-		"**/node_modules/": true,
-		// Linux packages
-		"**/os/arch": true,
-		"**/os/deb": true,
-		"**/os/rpm": true,
-		"**/os/flatpak": true,
-		"**/os/targz": true,
+		"**/node_modules/": true
 	},
 	"search.exclude": {
 		// Visual Studio
@@ -128,7 +122,7 @@
 		"**/os/deb": true,
 		"**/os/rpm": true,
 		"**/os/flatpak": true,
-		"**/os/targz": true,
+		"**/os/targz": true
 	},
 	"todo-tree.filtering.excludeGlobs": [
 		"**/.cache",

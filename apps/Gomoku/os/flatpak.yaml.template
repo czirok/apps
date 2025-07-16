@@ -1,0 +1,41 @@
+app-id: org.gnome.{{APP_NAME}}
+runtime: org.gnome.Platform
+runtime-version: '48'
+sdk: org.gnome.Sdk
+command: {{APP_NAME}}
+modules:
+  - name: {{APP_NAME}}
+    buildsystem: simple
+    sources:
+      - type: file
+        path: LICENSE
+      - type: file
+        path: {{APP_NAME}}
+      - type: file
+        path: libSkiaSharp.so
+      - type: file
+        path: appsettings.json
+      - type: file
+        path: I18N.tar.gz
+      - type: file
+        path: {{APP_NAME}}.desktop
+      - type: file
+        path: {{APP_NAME}}.svg
+      - type: file
+        path: org.gnome.{{APP_NAME}}.gschema.xml
+    build-commands:
+      - install -D -m644 LICENSE /app/share/{{APP_NAME}}/LICENSE
+      - install -D -m755 {{APP_NAME}} /app/bin/{{APP_NAME}}
+      - install -D -m644 libSkiaSharp.so /app/bin/libSkiaSharp.so
+      - mkdir -p /app/bin/I18N
+      - tar -xzf I18N.tar.gz -C /app/bin/
+      - install -D -m644 appsettings.json /app/bin/appsettings.json
+      - install -D -m644 {{APP_NAME}}.desktop /app/share/applications/org.gnome.{{APP_NAME}}.desktop
+      - install -D -m644 {{APP_NAME}}.svg /app/share/icons/hicolor/scalable/apps/org.gnome.{{APP_NAME}}.svg
+      - install -D -m644 org.gnome.{{APP_NAME}}.gschema.xml /app/share/glib-2.0/schemas/org.gnome.{{APP_NAME}}.gschema.xml
+      - glib-compile-schemas /app/share/glib-2.0/schemas
+      - gtk-update-icon-cache -q -t -f /app/share/icons/hicolor || true
+finish-args:
+  - --filesystem=host
+  - --socket=wayland
+  - --socket=x11

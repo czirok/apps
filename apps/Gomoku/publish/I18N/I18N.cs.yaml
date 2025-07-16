@@ -1,0 +1,33 @@
+Gomoku: Gomoku
+
+Settings: Nastavení
+Thinking time (sec): Čas na tah (s)
+Board size: Velikost desky
+Game mode: Herní režim
+You start: Začínáte
+AI starts: Začíná AI
+New game: Nová hra
+Undo/Redo: Zpět/Vpřed
+
+Thinking: Přemýšlím...
+You lost: Prohráli jste
+You won: Vyhráli jste
+You move: Váš tah
+
+Languages: Jazyky
+
+Board theme: Styl desky
+Wood with stones: Dřevěná deska s kameny
+Paper and pencil: Papír a tužka
+
+Copy Gomoku AI protocol: Kopírovat Gomoku AI protokol
+
+WARNING! The game is restarting!: VAROVÁNÍ! Hra se restartuje!
+
+About: O hře Gomoku
+About Comment: |
+  Tato hra Gomoku je založena na vítězném enginu z programátorské soutěže Microsoft 2003.
+
+  Původní C++ engine Pela vytvořil Petr Laštovička, který byl později během soutěže Microsoft převeden do C#. Cílem soutěže bylo vytvořit nejlepší Gomoku engine, kde vítěz získal 100 000 českých korun.
+
+  Tato moderní GTK4/Libadwaita implementace zachovává původní herní logiku, ale s moderním uživatelským rozhraním pro Linux systémy.

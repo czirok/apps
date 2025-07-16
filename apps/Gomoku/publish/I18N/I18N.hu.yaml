@@ -1,0 +1,33 @@
+Gomoku: Amőba
+
+Settings: Beállítások
+Thinking time (sec): Gondolkodási idő (mp)
+Board size: Tábla mérete
+Game mode: Játékmód
+You start: Te kezded
+AI starts: MI kezdi
+New game: Új játék
+
+Thinking: Gondolkodom...
+You lost: Vesztettél
+You won: Nyertél
+You move: Te lépsz
+Undo/Redo: Vissza/Előre
+
+Languages: Nyelvek
+
+Board theme: Tábla stílusa
+Wood with stones: Fa tábla kövekkel
+Paper and pencil: Papír és ceruza
+
+Copy Gomoku AI protocol: Gomoku AI protokoll másolás
+
+WARNING! The game is restarting!: FIGYELEM! A játék újraindul!
+
+About: A Gomoku játékról
+About Comment: |
+  Ez a Gomoku játék a Microsoft 2003-as programozói versenyének győztes motorjára épül.
+
+  Az eredeti C++ Pela engine-t Petr Laštovička készítette, majd a Microsoft verseny során C#-ra konvertálták. A verseny célja a legjobb Gomoku motor megalkotása volt, ahol a győztes 100 000 cseh koronát kapott.
+
+  Ez a modern GTK4/Libadwaita implementáció megtartja az eredeti játéklogikát, de korszerű felhasználói felülettel rendelkezik Linux rendszerekhez.

@@ -1,0 +1,103 @@
+Name:           {{APP_NAME}}
+Version:        {{VERSION}}
+Release:        1%{?dist}
+Summary:        {{DESCRIPTION}}
+License:        {{LICENSE}}
+URL:            {{URL}}
+Source0:        %{name}-%{version}.tar.gz
+
+BuildRequires:  desktop-file-utils
+
+# openSUSE dependencies
+%if 0%{?suse_version}
+Requires:       libcairo2
+Requires:       libadwaita-1-0
+Requires:       libglib-2_0-0
+Requires:       gnome-shell >= 48
+%endif
+
+# Fedora/RHEL dependencies
+%if 0%{?fedora} || 0%{?rhel}
+Requires:       cairo
+Requires:       libadwaita
+Requires:       gdk-pixbuf2
+Requires:       glib2
+Requires:       gnome-shell >= 48
+%endif
+
+%description
+{{DESCRIPTION}}
+
+%prep
+%setup -q
+
+%build
+# Nothing to build - precompiled binary
+
+%install
+rm -rf %{buildroot}
+
+# Create directories
+mkdir -p %{buildroot}%{_datadir}/{{APP_NAME}}/I18N
+mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_datadir}/applications
+mkdir -p %{buildroot}%{_datadir}/icons/hicolor/scalable/apps
+mkdir -p %{buildroot}%{_datadir}/glib-2.0/schemas
+
+# Install license
+install -Dm644 LICENSE %{buildroot}%{_datadir}/{{APP_NAME}}/LICENSE
+
+# Install executable
+install -Dm755 {{APP_NAME}} %{buildroot}%{_datadir}/{{APP_NAME}}/{{APP_NAME}}
+
+# Install library
+install -Dm644 libSkiaSharp.so %{buildroot}%{_datadir}/{{APP_NAME}}/libSkiaSharp.so
+
+# Install configuration
+install -Dm644 appsettings.json %{buildroot}%{_datadir}/{{APP_NAME}}/appsettings.json
+
+# Install I18N files
+tar -xzf I18N.tar.gz -C %{buildroot}%{_datadir}/{{APP_NAME}}/
+
+# Install desktop file
+install -Dm644 {{APP_NAME}}.desktop %{buildroot}%{_datadir}/applications/org.gnome.{{APP_NAME}}.desktop
+
+# Install icon
+install -Dm644 {{APP_NAME}}.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/org.gnome.{{APP_NAME}}.svg
+
+# Install GSettings schema
+install -Dm644 org.gnome.{{APP_NAME}}.gschema.xml %{buildroot}%{_datadir}/glib-2.0/schemas/org.gnome.{{APP_NAME}}.gschema.xml
+
+# Create wrapper script
+cat > %{buildroot}%{_bindir}/{{APP_NAME}} << 'EOF'
+#!/bin/bash
+exec %{_datadir}/{{APP_NAME}}/{{APP_NAME}} "$@"
+EOF
+chmod 755 %{buildroot}%{_bindir}/{{APP_NAME}}
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/org.gnome.{{APP_NAME}}.desktop
+
+%post
+/bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
+/usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
+
+%postun
+if [ $1 -eq 0 ] ; then
+    /bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null
+    /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+fi
+/usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
+
+%posttrans
+/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+
+%files
+%{_bindir}/{{APP_NAME}}
+%{_datadir}/{{APP_NAME}}/
+%{_datadir}/applications/org.gnome.{{APP_NAME}}.desktop
+%{_datadir}/icons/hicolor/scalable/apps/org.gnome.{{APP_NAME}}.svg
+%{_datadir}/glib-2.0/schemas/org.gnome.{{APP_NAME}}.gschema.xml
+
+# Disable debuginfo package creation
+%global debug_package %{nil}

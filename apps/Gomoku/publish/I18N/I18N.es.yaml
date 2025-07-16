@@ -1,0 +1,33 @@
+Gomoku: Gomoku
+
+Settings: Configuración
+Thinking time (sec): Tiempo (seg)
+Board size: Tamaño tablero
+Game mode: Modo de juego
+You start: Empiezas tú
+AI starts: Empieza IA
+New game: Nuevo juego
+
+Thinking: Pensando...
+You lost: Has perdido
+You won: Has ganado
+You move: Tu movimiento
+Undo/Redo: Deshacer/Rehacer
+
+Languages: Idiomas
+
+Board theme: Estilo del tablero
+Wood with stones: Tablero de madera con piedras
+Paper and pencil: Papel y lápiz
+
+Copy Gomoku AI protocol: Copiar protocolo IA de Gomoku
+
+WARNING! The game is restarting!: ¡ADVERTENCIA! ¡El juego se está reiniciando!
+
+About: Acerca de Gomoku
+About Comment: |
+  Este juego de Gomoku está basado en el motor ganador del concurso de programación de Microsoft de 2003.
+
+  El motor original Pela en C++ fue creado por Petr Laštovička y luego convertido a C# durante el concurso de Microsoft. El objetivo del concurso era crear el mejor motor de Gomoku, donde el ganador recibió 100,000 coronas checas.
+
+  Esta implementación moderna de GTK4/Libadwaita mantiene la lógica del juego original pero con una interfaz de usuario contemporánea para sistemas Linux.

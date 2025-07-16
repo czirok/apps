@@ -1,0 +1,27 @@
+﻿Cultures:
+  - Name: en-US
+    Active: true
+    Default: true
+  - Name: cs-CZ
+    Active: true
+  - Name: hu-HU
+    Active: true
+  - Name: de-DE
+    Active: true
+  - Name: es-ES
+    Active: true
+  - Name: ar
+    Active: true
+    Rtl: true
+  - Name: he-IL
+    Active: true
+    Rtl: true
+
+Selector:
+  en-US: English
+  cs-CZ: Čeština
+  hu-HU: Magyar
+  de-DE: Deutsch
+  es-ES: Español
+  ar: العربية
+  he-IL: עברית

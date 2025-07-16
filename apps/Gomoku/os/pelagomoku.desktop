@@ -1,0 +1,23 @@
+[Desktop Entry]
+Name=Gomoku
+Name[hu]=Amőba
+GenericName=Gomoku
+GenericName[ar]=غوموكو
+GenericName[cs]=Gomoku
+GenericName[de]=Gomoku
+GenericName[es]=Gomoku
+GenericName[he]=גומוקו
+GenericName[hu]=Amőba
+Comment=Play Gomoku against the 2003 Microsoft AI competition winner
+Comment[ar]=العب غوموكو ضد الذكاء الاصطناعي الفائز بمسابقة مايكروسوفت عام 2003
+Comment[cs]=Hrajte Gomoku proti vítězi soutěže Microsoft AI z roku 2003
+Comment[de]=Spiele Gomoku gegen den Gewinner des Microsoft-KI-Wettbewerbs 2003
+Comment[es]=Juega Gomoku contra el ganador del concurso de IA de Microsoft 2003
+Comment[he]=שחק גומוקו נגד זוכה תחרות ה-AI של מיקרוסופט משנת 2003
+Comment[hu]=Amőba játék a 2003-as Microsoft verseny győztes mesterséges intelligenciájával
+Exec=pelagomoku
+Icon=org.gnome.pelagomoku
+Terminal=false
+Type=Application
+Categories=Game;BoardGame;GTK;
+StartupNotify=true
