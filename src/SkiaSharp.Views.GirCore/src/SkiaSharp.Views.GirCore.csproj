@@ -6,8 +6,9 @@
     <PackageTags>skiasharp;gtk;cairo;graphics;rendering;2d;gircore;linux;desktop;drawing;canvas;hardware-acceleration;widget;drawingarea;custom-controls</PackageTags>
 
     <PackageId>SkiaSharp.Views.GirCore</PackageId>
-    <PackageProjectUrl>https://github.com/czirok/apps/src/SkiaSharp.Views.GirCore</PackageProjectUrl>
-    <PackageVersion>3.119.0-preview.5</PackageVersion>
+    <PackageVersion>3.119.0-preview.6</PackageVersion>
+
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <Import Project="..\..\Nuget.Common.props" />

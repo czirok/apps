@@ -61,10 +61,10 @@ After upgrade VS Code, you may need to change the permissions of the workbench f
 Fonted requires read and write permissions for the workbench files.
 
 ```bash
-sudo chmod 666 /opt/visual-studio-code/resources/app/out/vs/code/electron-sandbox/workbench/*
+sudo chmod 666 /opt/visual-studio-code/resources/app/out/vs/code/electron-browser/workbench/*
 
 # restore the original permissions
-sudo chmod 644 /opt/visual-studio-code/resources/app/out/vs/code/electron-sandbox/workbench/*
+sudo chmod 644 /opt/visual-studio-code/resources/app/out/vs/code/electron-browser/workbench/*
 ```
 
 ## oh my pos
@@ -74,15 +74,14 @@ curl -s https://ohmyposh.dev/install.sh | bash -s -- -d "$APPSLINUX"
 
 ## fnm
 
-curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "$APPSLINUX/.local/fnm" --skip-shell
-
 curl -fsSL https://fnm.vercel.app/install | bash
 ```
 
 ## pnpm
 
 ```bash
-curl -fsSL https://get.pnpm.io/install.sh | sh -s -- -g --prefix "$APPSLINUX/.local/pnpm"
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+
 ```
 
 ## Certificates
@@ -106,6 +105,8 @@ certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n localhost -i /etc/ca-certificate
 # then log out and log in again to apply the changes.
 ```
 
-bash -c "cd $APPS && exec bash --rcfile $APPS/.vscode/.linux/.bashrc"
+## Tilix profile command
 
-npm install --global corepack@latest
+```bash
+bash -c "cd $APPS && exec bash --rcfile $APPS/.vscode/.linux/.bashrc"
+```

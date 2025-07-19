@@ -14,6 +14,7 @@
     <PackageReadmeFile>NuGet.md</PackageReadmeFile>
 
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/czirok/apps</PackageProjectUrl>
 
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>

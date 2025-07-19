@@ -21,7 +21,7 @@ This package provides a fluent API for creating data-bound preference interfaces
 ## Installation
 
 ```bash
-dotnet add package EasyUIBinding.GirCore
+dotnet add package EasyUIBinding.GirCore --version 0.7.0-preview.1.3
 ```
 
 ## Quick Start

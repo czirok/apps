@@ -3,7 +3,6 @@
   <PropertyGroup>
     <NugetTargetFrameworks>net8.0;net9.0;net10.0</NugetTargetFrameworks>
     <GeneratorTargetFramework>netstandard2.0</GeneratorTargetFramework>
-    <AppTargetFramework>net9.0</AppTargetFramework>
     <LangVersion>preview</LangVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>

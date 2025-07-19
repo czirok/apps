@@ -15,6 +15,8 @@ public partial class ClipboardButton : InputBinding<Adw.ActionRow, string>, IDis
 		_row.OnActivated += OnChanged;
 
 		_statusIcon = Gtk.Image.New();
+		_statusIcon.SetFromIconName("edit-copy-symbolic");
+		_statusIcon.CssClasses = [];
 
 		_row.AddPrefix(Gtk.Label.New(title));
 		_row.AddSuffix(_statusIcon);
@@ -47,6 +49,17 @@ public partial class ClipboardButton : InputBinding<Adw.ActionRow, string>, IDis
 			_statusIcon.CssClasses = ["success"];
 			UpdateBoundProperty(_value!);
 			InvokeCallback(sender, new InputChangedEventArgs<string>(Name, _value!));
+
+			GLib.Functions.TimeoutAdd(
+				priority: GLib.Constants.PRIORITY_LOW,
+				interval: 4000, // 4 seconds
+				function: new GLib.SourceFunc(() =>
+				{
+					_statusIcon.SetFromIconName("edit-copy-symbolic");
+					_statusIcon.CssClasses = [];
+					return GLib.Constants.SOURCE_REMOVE;
+				})
+			);
 		}
 		else
 		{

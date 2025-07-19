@@ -24,7 +24,7 @@ Great thanks to [Mike](https://github.com/JinShil) for creating the [Blazor WebK
 ## Installation
 
 ```bash
-dotnet add package WebKit.BlazorWebView.GirCore
+dotnet add package WebKit.BlazorWebView.GirCore --version 10.0.0-preview.6
 ```
 
 ## Examples

@@ -38,7 +38,7 @@ A modern localization library for .NET applications that uses YAML files instead
 ## Installation
 
 ```bash
-dotnet add package Yaml.Localization
+dotnet add package Yaml.Localization --version 10.0.0-preview.6
 ```
 
 ## YAML File Structure

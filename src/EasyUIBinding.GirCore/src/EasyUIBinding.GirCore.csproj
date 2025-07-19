@@ -6,8 +6,7 @@
     <PackageTags>gircore;gtk;gtk4;ui;widgets;binding;databinding;mvvm;controls;propertychanged;preferences;form;generator;roslyn;sourcegenerator;dotnet</PackageTags>
 
     <PackageId>EasyUIBinding.GirCore</PackageId>
-    <PackageProjectUrl>https://github.com/czirok/apps/src/EasyUIBinding.GirCore</PackageProjectUrl>
-    <PackageVersion>0.7.0-preview.1.2</PackageVersion>
+    <PackageVersion>0.7.0-preview.1.3</PackageVersion>
   </PropertyGroup>
 
   <Import Project="..\..\Nuget.Common.props" />

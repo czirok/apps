@@ -27,7 +27,7 @@ This package provides a `GraphicsView` implementation (`GirCoreSkiaGraphicsView`
 Install the package via NuGet:
 
 ```bash
-dotnet add package Gtk.MauiGraphicsSkia.GirCore
+dotnet add package Gtk.MauiGraphicsSkia.GirCore --version 10.0.0-preview.6
 ```
 
 ## Examples

@@ -20,9 +20,9 @@
     <PackageVersion Include="SkiaSharp.NativeAssets.Linux" Version="3.119.0" />
     <PackageVersion Include="SkiaSharp.Views.Desktop.Common" Version="3.119.0" />
 
-    <PackageVersion Include="EasyUIBinding.GirCore" Version="0.7.0-preview.1.2" />
-    <PackageVersion Include="Gtk.MauiGraphicsSkia.GirCore" Version="10.0.0-preview.5" />
-    <PackageVersion Include="Yaml.Localization" Version="10.0.0-preview.5.4" />
+    <PackageVersion Include="EasyUIBinding.GirCore" Version="0.7.0-preview.1.3" />
+    <PackageVersion Include="Gtk.MauiGraphicsSkia.GirCore" Version="10.0.0-preview.6" />
+    <PackageVersion Include="Yaml.Localization" Version="10.0.0-preview.6" />
 
   </ItemGroup>
 

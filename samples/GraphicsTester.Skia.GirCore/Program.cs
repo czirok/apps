@@ -1,6 +1,6 @@
-using System.Runtime.Versioning;
 using GraphicsTester.Scenarios;
 using Gtk.MauiGraphicsSkia.GirCore;
+using System.Runtime.Versioning;
 
 [UnsupportedOSPlatform("OSX")]
 [UnsupportedOSPlatform("Windows")]
@@ -14,6 +14,8 @@ internal class Program
 		GdkPixbuf.Module.Initialize();
 		Cairo.Module.Initialize();
 		Graphene.Module.Initialize();
+
+		SkiaSharp.Views.GirCore.Module.Initialize();
 
 		var items = new Dictionary<string, AbstractScenario>();
 

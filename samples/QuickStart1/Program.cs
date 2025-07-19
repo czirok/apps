@@ -15,6 +15,8 @@ internal class Program
 		GdkPixbuf.Module.Initialize();
 		Cairo.Module.Initialize();
 
+		SkiaSharp.Views.GirCore.Module.Initialize();
+
 		// Create the Adw application
 		var app = Adw.Application.New(ApplicationId, Gio.ApplicationFlags.FlagsNone);
 		SKDrawingArea? skDrawingArea = null;
@@ -59,7 +61,10 @@ internal class Program
 
 		app.Run(0, null);
 
+
 		const string text = "Hello SkiaSharp on Linux!";
+		const string starPath = "m8.03 2-1.875 3.939-4.15 0.621 2.982 3.08-0.732 4.336 3.719-2.037 3.697 2.061-0.684-4.34 3.02-3.062-4.143-0.645zm-8e-3 2 1.221 2.7308789 2.762 0.432-2.01 1.9451211 0.455 3.048803-2.463-1.373-2.48 1.357 0.488-3.046803-1.988-1.9591211 2.766-0.412z";
+
 		static void OnPaintSurface(object? sender, SKPaintSurfaceEventArgs e)
 		{
 			var canvas = e.Surface.Canvas;
@@ -68,29 +73,54 @@ internal class Program
 			// Clear the canvas with a background color
 			canvas.Clear(SKColors.Beige);
 
-			// Set up the font and paint for drawing text
-			// Note: SKTypeface.Default uses the system default font
+			// Draw text
 			using SKTypeface typeface = SKTypeface.Default;
 			using SKFont font = new(typeface, 36);
-			using SKPaint paint = new()
+			using SKPaint textPaint = new()
 			{
 				Color = SKColors.DarkBlue,
 				IsAntialias = true
 			};
 
-			// Measure the text to center it
-			// Note: MeasureText returns the width of the text, and bounds contains the height
 			SKRect bounds = SKRect.Empty;
-			float width = font.MeasureText(text, out bounds, paint);
+			float width = font.MeasureText(text, out bounds, paint: textPaint);
 			float height = bounds.Height;
 
-			// Draw the text centered in the canvas
-			// Note: The text is centered both horizontally and vertically
 			canvas.DrawText(text,
 				(info.Width - width) / 2,
 				(info.Height - height) / 2 + bounds.Height,
 				font,
-				paint);
+				textPaint);
+
+			// Draw random stars
+			var random = new Random();
+			using SKPaint starPaint = new()
+			{
+				Color = SKColors.Red,
+				IsAntialias = true,
+				Style = SKPaintStyle.Fill
+			};
+
+			// Draw 10 random stars
+			for (int i = 0; i < 10; i++)
+			{
+				var starSkPath = SKPath.ParseSvgPathData(starPath);
+				if (starSkPath != null)
+				{
+					// Random position
+					float x = random.Next(0, info.Width - 25);
+					float y = random.Next(0, info.Height - 25);
+
+					// Random scale
+					float scale = (float)(random.NextDouble() * 2 + 0.5); // 0.5 to 2.5
+
+					canvas.Save();
+					canvas.Translate(x, y);
+					canvas.Scale(scale);
+					canvas.DrawPath(starSkPath, starPaint);
+					canvas.Restore();
+				}
+			}
 		}
 	}
 }

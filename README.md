@@ -49,3 +49,10 @@ cd samples && chmod +x ./aot.sh && ./aot.sh
 - Instant startup - no JIT compilation
 - Self-contained - no .NET runtime required
 - Small footprint - optimized native code
+
+## Changelog
+
+- [v2025.07.14-nuget](.github/releases/v2025.07.14-nuget.md)
+- [v2025.07.14-apps](.github/releases/v2025.07.14-apps.md)
+- [v2025.07.16-apps](.github/releases/v2025.07.16-apps.md)
+- [v2025.07.20-nuget](.github/releases/v2025.07.20-nuget.md)
