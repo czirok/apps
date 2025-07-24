@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <TrimmerRootDescriptor Include="ILLink.Trimless.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" />
     <PackageReference Include="GirCore.Adw-1" />
     <PackageReference Include="GirCore.Cairo-1.0" />
     <PackageReference Include="GirCore.GdkPixbuf-2.0" />

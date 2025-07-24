@@ -11,6 +11,8 @@ internal class Program
 		// Initialize the required modules
 		Adw.Module.Initialize();
 
+		EasyUIBinding.GirCore.Style.Initialize();
+
 		// Create a service collection and add the SamplePreferencesPage
 		// This is where we can add any services we want to use in the application
 		var provider = new ServiceCollection()
@@ -45,7 +47,7 @@ internal class Program
 			var window = Adw.ApplicationWindow.New((Adw.Application)sender);
 			window.Title = "Easy UI Binding Sample";
 			window.Content = box;
-			window.SetDefaultSize(600, 900);
+			window.SetDefaultSize(900, 700);
 			window.Show();
 		};
 

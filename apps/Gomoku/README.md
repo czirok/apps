@@ -30,19 +30,19 @@ Packages tested on:
 
 |OS|Version|
 |---|---|
-|Arch Linux (latest)|[pelagomoku-1.0.0-1-x86_64.pkg.tar.zst](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/pelagomoku-1.0.0-1-x86_64.pkg.tar.zst)|
-|Debian Bookworm (12)|[pelagomoku_1.0.0_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/pelagomoku_1.0.0_amd64.deb)|
-|Ubuntu Plucky Puffin (25.04)|[pelagomoku_1.0.0_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/pelagomoku_1.0.0_amd64.deb)|
-|Fedora Adams (42)|[pelagomoku-1.0.0-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/pelagomoku-1.0.0-1.x86_64.rpm)|
-|OpenSUSE Tumbleweed (latest)|[pelagomoku-1.0.0-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/pelagomoku-1.0.0-1.x86_64.rpm)|
-|Portable (tar.gz)|[pelagomoku-1.0.0-x86_64.tar.gz](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/pelagomoku-1.0.0-x86_64.tar.gz)|
+|Arch Linux (latest)|[pelagomoku-1.1.0-1-x86_64.pkg.tar.zst](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-1-x86_64.pkg.tar.zst)|
+|Debian Bookworm (12)|[pelagomoku_1.1.0_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku_1.1.0_amd64.deb)|
+|Ubuntu Plucky Puffin (25.04)|[pelagomoku_1.1.0_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku_1.1.0_amd64.deb)|
+|Fedora Adams (42)|[pelagomoku-1.1.0-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-1.x86_64.rpm)|
+|OpenSUSE Tumbleweed (latest)|[pelagomoku-1.1.0-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-1.x86_64.rpm)|
+|Portable (tar.gz)|[pelagomoku-1.1.0-x86_64.tar.gz](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-x86_64.tar.gz)|
 
 Flatpak package tested on:
 
 |OS|Version|
 |---|---|
-|Ubuntu Noble Numbat (24.04)|[pelagomoku-1.0.0-x86_64.flatpak](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/pelagomoku-1.0.0-x86_64.flatpak)|
-|CentOS Stream 10|[pelagomoku-1.0.0-x86_64.flatpak](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/pelagomoku-1.0.0-x86_64.flatpak)|
+|Ubuntu Noble Numbat (24.04)|[pelagomoku-1.1.0-x86_64.flatpak](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-x86_64.flatpak)|
+|CentOS Stream 10|[pelagomoku-1.1.0-x86_64.flatpak](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-x86_64.flatpak)|
 
 ## Installation
 
@@ -50,19 +50,19 @@ Flatpak package tested on:
 
 |OS|Package|
 |---|---|
-|**Arch Linux:**|`sudo pacman -U pelagomoku-1.0.0-1-x86_64.pkg.tar.zst`|
-|**Debian/Ubuntu:**|`sudo dpkg -i pelagomoku_1.0.0_amd64.deb`|
-|**Fedora:**|`sudo dnf install pelagomoku-1.0.0-1.x86_64.rpm`|
-|**openSUSE:**|`sudo zypper install --allow-unsigned-rpm pelagomoku-1.0.0-1.x86_64.rpm`|
-|**Flatpak:**|`flatpak install pelagomoku-1.0.0-x86_64.flatpak`|
+|**Arch Linux:**|`sudo pacman -U pelagomoku-1.1.0-1-x86_64.pkg.tar.zst`|
+|**Debian/Ubuntu:**|`sudo dpkg -i pelagomoku_1.1.0_amd64.deb`|
+|**Fedora:**|`sudo dnf install pelagomoku-1.1.0-1.x86_64.rpm`|
+|**openSUSE:**|`sudo zypper install --allow-unsigned-rpm pelagomoku-1.1.0-1.x86_64.rpm`|
+|**Flatpak:**|`flatpak install pelagomoku-1.1.0-x86_64.flatpak`|
 
 **tar.gz (portable):**
 
 Install `cairo libadwaita gdk-pixbuf2` dependencies, then:
 
   ```bash
-  tar -xzf pelagomoku-1.0.0-x86_64.tar.gz
-  cd pelagomoku-1.0.0
+  tar -xzf pelagomoku-1.1.0-x86_64.tar.gz
+  cd pelagomoku-1.1.0
   ./install-to-home.sh     # Add to applications menu
   ./pelagomoku
   ```
@@ -112,7 +112,7 @@ The resulting binary is a fully self-contained, Ahead-of-Time compiled Linux des
 ```bash
 ...
 8.7M libSkiaSharp.so
-7.4M Gomoku
+9.3M Gomoku
 ...
 ```
 

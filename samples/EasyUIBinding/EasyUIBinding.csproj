@@ -1,11 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
     <OutputType>Exe</OutputType>
+    <TargetFramework>$(SampleTargetFramework)</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <TrimmerRootDescriptor Include="ILLink.Trimless.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" />
     <PackageReference Include="EasyUIBinding.GirCore" />
     <PackageReference Include="GirCore.Adw-1" />
     <PackageReference Include="Microsoft.Extensions.Hosting" />

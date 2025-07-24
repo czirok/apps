@@ -29,19 +29,19 @@ Packages tested on:
 
 |OS|Version|
 |---|---|
-|Arch Linux (latest)|[nbody-1.2.1-1-x86_64.pkg.tar.zst](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-1-x86_64.pkg.tar.zst)|
-|Debian Bookworm (12)|[nbody_1.2.1_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody_1.2.1_amd64.deb)|
-|Ubuntu Plucky Puffin (25.04)|[nbody_1.2.1_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody_1.2.1_amd64.deb)|
-|Fedora Adams (42)|[nbody-1.2.1-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-1.x86_64.rpm)|
-|OpenSUSE Tumbleweed (latest)|[nbody-1.2.1-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-1.x86_64.rpm)|
-|Portable (tar.gz)|[nbody-1.2.1-x86_64.tar.gz](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-x86_64.tar.gz)|
+|Arch Linux (latest)|[nbody-1.2.2-1-x86_64.pkg.tar.zst](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody-1.2.2-1-x86_64.pkg.tar.zst)|
+|Debian Bookworm (12)|[nbody_1.2.2_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody_1.2.2_amd64.deb)|
+|Ubuntu Plucky Puffin (25.04)|[nbody_1.2.2_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody_1.2.2_amd64.deb)|
+|Fedora Adams (42)|[nbody-1.2.2-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody-1.2.2-1.x86_64.rpm)|
+|OpenSUSE Tumbleweed (latest)|[nbody-1.2.2-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody-1.2.2-1.x86_64.rpm)|
+|Portable (tar.gz)|[nbody-1.2.2-x86_64.tar.gz](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody-1.2.2-x86_64.tar.gz)|
 
 Flatpak package tested on:
 
 |OS|Version|
 |---|---|
-|Ubuntu Noble Numbat (24.04)|[nbody-1.2.1-x86_64.flatpak](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-x86_64.flatpak)|
-|CentOS Stream 10|[nbody-1.2.1-x86_64.flatpak](https://github.com/czirok/apps/releases/download/v2025.07.16-apps/nbody-1.2.1-x86_64.flatpak)|
+|Ubuntu Noble Numbat (24.04)|[nbody-1.2.2-x86_64.flatpak](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody-1.2.2-x86_64.flatpak)|
+|CentOS Stream 10|[nbody-1.2.2-x86_64.flatpak](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody-1.2.2-x86_64.flatpak)|
 
 ## Installation
 
@@ -49,19 +49,19 @@ Flatpak package tested on:
 
 |OS|Package|
 |---|---|
-|**Arch Linux:**|`sudo pacman -U nbody-1.2.1-1-x86_64.pkg.tar.zst`|
-|**Debian/Ubuntu:**|`sudo dpkg -i nbody_1.2.1_amd64.deb`|
-|**Fedora:**|`sudo dnf install nbody-1.2.1-1.x86_64.rpm`|
-|**openSUSE:**|`sudo zypper install --allow-unsigned-rpm nbody-1.2.1-1.x86_64.rpm`|
-|**Flatpak:**|`flatpak install nbody-1.2.1-x86_64.flatpak`|
+|**Arch Linux:**|`sudo pacman -U nbody-1.2.2-1-x86_64.pkg.tar.zst`|
+|**Debian/Ubuntu:**|`sudo dpkg -i nbody_1.2.2_amd64.deb`|
+|**Fedora:**|`sudo dnf install nbody-1.2.2-1.x86_64.rpm`|
+|**openSUSE:**|`sudo zypper install --allow-unsigned-rpm nbody-1.2.2-1.x86_64.rpm`|
+|**Flatpak:**|`flatpak install nbody-1.2.2-x86_64.flatpak`|
 
 **tar.gz (portable):**
 
 Install `cairo libadwaita gdk-pixbuf2` dependencies, then:
 
   ```bash
-  tar -xzf nbody-1.2.1-x86_64.tar.gz
-  cd nbody-1.2.1
+  tar -xzf nbody-1.2.2-x86_64.tar.gz
+  cd nbody-1.2.2
   ./install-to-home.sh
   ./nbody
 ```
@@ -111,7 +111,7 @@ The resulting binary is a fully self-contained, Ahead-of-Time compiled Linux des
 ```bash
 ...
 8.7M libSkiaSharp.so
-6.8M NBody
+8.7M NBody
 ...
 ```
 

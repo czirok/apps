@@ -1,0 +1,3 @@
+<linker>
+	<assembly fullname="EasyUIBinding" preserve="all" />
+</linker>

@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+
+    <Title>LiveChartsCore for GTK with SkiaSharp and GirCore</Title>
+    <Description>LiveChartsCore implementation for GTK4 applications using SkiaSharp rendering and GirCore bindings. Provides interactive, animated charts and data visualization widgets for Linux desktop applications with hardware-accelerated performance.</Description>
+    <PackageTags>livecharts;charts;data-visualization;gtk;skiasharp;gircore;linux;desktop;graphs;plotting;interactive;animated;widgets;line-chart;bar-chart;pie-chart;scatter-plot;real-time;dashboard;analytics</PackageTags>
+    <PackageId>Gtk.LiveChartsCore.SkiaSharpView.GirCore</PackageId>
+    <PackageVersion>2.0.0-rc5.4</PackageVersion>
+
+    <IsTrimmable>true</IsTrimmable>
+
+  </PropertyGroup>
+
+  <Import Project="..\..\Nuget.Common.props" />
+
+  <ItemGroup>
+    <PackageReference Include="GirCore.Adw-1" />
+    <PackageReference Include="GirCore.Gtk-4.0" />
+    <PackageReference Include="LiveChartsCore" />
+    <PackageReference Include="LiveChartsCore.Behaviours" />
+    <PackageReference Include="LiveChartsCore.SkiaSharpView" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../SkiaSharp.Views.GirCore/src/SkiaSharp.Views.GirCore.csproj" />
+  </ItemGroup>
+
+</Project>

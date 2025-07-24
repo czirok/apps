@@ -1,5 +1,3 @@
-using EasyUIBinding.GirCore.Binding;
-
 namespace EasyUIBinding.GirCore.Widget;
 
 public class Button : UI<Gtk.Button, object>, IDisposable
@@ -8,6 +6,23 @@ public class Button : UI<Gtk.Button, object>, IDisposable
 	private readonly Gtk.Button _widget;
 	private readonly Action<object, InputChangedEventArgs>? _changed;
 	private object? _value;
+
+	public Button(string title) : this(Guid.NewGuid().ToString(), title, null)
+	{
+	}
+
+	public Button(string title, object? value = null) : this(Guid.NewGuid().ToString(), title, value)
+	{
+	}
+
+	public Button(string name, string title, object? value = null)
+	{
+		_name = name;
+		_value = value;
+		_widget = new Gtk.Button();
+		_widget.Label = title;
+		_widget.OnClicked += OnChanged;
+	}
 
 	public Button(string name, Gtk.Widget child, object value, string[] css, Action<object, InputChangedEventArgs>? changed = null)
 	{

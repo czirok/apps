@@ -1,4 +1,4 @@
-﻿using EasyUIBinding.GirCore.Binding;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Gomoku;
 
@@ -8,7 +8,7 @@ public enum GameMode
 	EngineVsHuman
 }
 
-public partial class BoardModel : NotifyPropertyModel
+public partial class BoardModel : ObservableObject
 {
 	public GameHistory GameHistory { get; set; } = new();
 
@@ -19,17 +19,17 @@ public partial class BoardModel : NotifyPropertyModel
 		Halign = Gtk.Align.Center
 	};
 
-	[GirCoreNotify]
-	private int thinkingTime = 10;
+	[ObservableProperty]
+	public partial int ThinkingTime { get; set; } = 10;
 
-	[GirCoreNotify]
-	private int boardSize = 20;
+	[ObservableProperty]
+	public partial int BoardSize { get; set; } = 20;
 
-	[GirCoreNotify]
-	private GameMode gameMode = GameMode.HumanVsEngine;
+	[ObservableProperty]
+	public partial GameMode GameMode { get; set; } = GameMode.HumanVsEngine;
 
-	[GirCoreNotify]
-	private BoardTheme boardTheme = BoardTheme.WoodWithStones;
+	[ObservableProperty]
+	public partial BoardTheme BoardTheme { get; set; } = BoardTheme.WoodWithStones;
 
 	private string gomokuAIProtocol = string.Empty;
 	public string GomokuAIProtocol

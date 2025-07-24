@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(SampleTargetFramework)</TargetFramework>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <TrimmerRootDescriptor Include="ILLink.Trimless.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EasyUIBinding.GirCore" />
+    <PackageReference Include="Gtk.LiveChartsCore.SkiaSharpView.GirCore" />
+    <PackageReference Include="GirCore.Adw-1" />
+    <PackageReference Include="HarfBuzzSharp.NativeAssets.Linux" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux" />
+    <PackageReference Include="SkiaSharp" />
+    <PackageReference Include="SkiaSharp.Views.Desktop.Common" />
+    <PackageReference Include="SkiaSharp.Views.GirCore" />
+    <PackageReference Include="LiveChartsCore" />
+    <PackageReference Include="LiveChartsCore.SkiaSharpView" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../ViewModelsSamples/ViewModelsSamples.csproj" />
+  </ItemGroup>
+
+</Project>

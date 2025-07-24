@@ -1,0 +1,4 @@
+<linker>
+	<assembly fullname="GraphicsTester.Skia.GirCore" preserve="all" />
+	<assembly fullname="GraphicsTester.Portable" preserve="all" />
+</linker>

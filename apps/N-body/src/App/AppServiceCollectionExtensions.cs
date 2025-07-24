@@ -29,7 +29,7 @@ public static class AppServiceCollectionExtensions
 			{
 				options.SingleLine = true;
 				options.TimestampFormat = "HH:mm:ss ";
-			});
+			}).SetMinimumLevel(LogLevel.Information);
 		});
 
 		services.AddYamlFileSystemLocalization();

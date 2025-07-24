@@ -1,6 +1,6 @@
+using System.Runtime.Versioning;
 using GraphicsTester.Scenarios;
 using Gtk.MauiGraphicsSkia.GirCore;
-using System.Runtime.Versioning;
 
 [UnsupportedOSPlatform("OSX")]
 [UnsupportedOSPlatform("Windows")]

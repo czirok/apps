@@ -1,5 +1,23 @@
 # Samples
 
+## LiveCharts2 GTK with GirCore and SkiaSharp
+
+```bash
+cd samples/LiveChartsCore/GirCoreSample
+dotnet run
+```
+
+![LiveCharts2 GTK](/assets/Gtk.LiveChartsCore.SkiaSharpView.GirCore.gif)
+
+## Easy UI Binding for GirCore
+
+```bash
+cd samples/EasyUIBinding
+dotnet run
+```
+
+![Easy UI Binding](/assets/EasyUIBinding.png)
+
 ## GirCore Maui Graphics SkiaSharp Tester
 
 ```bash
@@ -49,12 +67,3 @@ dotnet run
 ```
 
 ![Blazor GirCore Application](/assets/WebKit.BlazorWebView.GirCore.png)
-
-## Easy GirCore UI Binding
-
-```bash
-cd samples/EasyUIBinding
-dotnet run
-```
-
-![Easy UI Binding](/assets/EasyUIBinding.png)

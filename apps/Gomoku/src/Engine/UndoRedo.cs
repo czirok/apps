@@ -1,4 +1,4 @@
-using EasyUIBinding.GirCore.Binding;
+using EasyUIBinding.GirCore;
 
 namespace Gomoku;
 

@@ -1,8 +1,7 @@
+using System.Globalization;
 using EasyUIBinding.GirCore;
-using EasyUIBinding.GirCore.Binding;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
-using System.Globalization;
 using Yaml.Localization;
 
 namespace GirCoreApp;
@@ -76,10 +75,11 @@ public class CultureSample : Adw.PreferencesPage, IDisposable
 		Languages.AddRange([
 			new WrapToggle<string>(
 				"languages",
+				string.Empty,
 				_cultures.SpecificActiveSelector(),
 				_cultures.SpecificDefaultCultureInfo().Name,
 				CultureInfo.CurrentUICulture.Name)
-				.OnChanged((sender, args) => {
+				.OnWrapToggleChanged<string>((sender, args) => {
 					if (args is not InputDictionaryChangedEventArgs<string> inputArgs)
 						return;
 

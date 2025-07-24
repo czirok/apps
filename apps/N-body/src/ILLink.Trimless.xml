@@ -1,0 +1,3 @@
+<linker>
+	<assembly fullname="NBody" preserve="all" />
+</linker>
