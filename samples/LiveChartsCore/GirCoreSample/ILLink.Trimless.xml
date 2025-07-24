@@ -1,0 +1,5 @@
+<linker>
+	<assembly fullname="ViewModelsSamples" preserve="all" />
+	<assembly fullname="LiveChartsCore" preserve="all" />
+	<assembly fullname="Gtk.LiveChartsCore.SkiaSharpView.GirCore" preserve="all" />
+</linker>

@@ -1,5 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
+using NBody;
 using NBody.App;
+using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
 
 [UnsupportedOSPlatform("OSX")]
@@ -7,7 +9,7 @@ using System.Runtime.Versioning;
 internal class Program
 {
 	internal const string ApplicationId = "org.gnome.nbody";
-	internal const string ApplicationVersion = "1.2.1";
+	internal const string ApplicationVersion = "1.2.2";
 
 	private static void Main(string[] _)
 	{

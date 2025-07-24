@@ -1,24 +1,24 @@
-﻿using System.Numerics;
-using EasyUIBinding.GirCore.Binding;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System.Numerics;
 
 namespace NBody;
 
 /// <summary>
 /// Represents the world of the simulation. 
 /// </summary>
-public partial class World : NotifyPropertyModel
+public partial class World : ObservableObject
 {
 	/// <summary>
 	/// The gravitational constant. 
 	/// </summary>
-	[GirCoreNotify(ValidateValue = true)]
-	private float g = 67;
+	[ObservableProperty]
+	public partial float G { get; set; } = 67;
 
 	/// <summary>
 	/// The maximum speed. 
 	/// </summary>
-	[GirCoreNotify(ValidateValue = true)]
-	private float c = 1e4f;
+	[ObservableProperty]
+	public partial float C { get; set; } = 1e4f;
 
 	/// <summary>
 	/// The world instance. 
@@ -40,6 +40,7 @@ public partial class World : NotifyPropertyModel
 				lock (_bodyLock)
 					_bodies = new Body[value];
 				Generate();
+				OnPropertyChanged(nameof(BodyAllocationCount));
 			}
 		}
 	}
@@ -62,14 +63,14 @@ public partial class World : NotifyPropertyModel
 	/// <summary>
 	/// Determines whether the simulation is active or paused. 
 	/// </summary>
-	[GirCoreNotify(ValidateValue = true)]
-	private bool active;
+	[ObservableProperty]
+	public partial bool Active { get; set; } = true;
 
 	/// <summary>
 	/// Determines whether to draw the tree structure for calculating forces. 
 	/// </summary>
-	[GirCoreNotify(ValidateValue = true)]
-	private bool drawTree;
+	[ObservableProperty]
+	public partial bool DrawTree { get; set; } = false;
 
 	/// <summary>
 	/// Determines whether to draw tracers showing history of body locations. 
@@ -77,22 +78,30 @@ public partial class World : NotifyPropertyModel
 	public bool DrawTracers
 	{
 		get => Body.DrawTracers;
-		set => Body.DrawTracers = value;
+		set
+		{
+			if (Body.DrawTracers != value)
+			{
+				Body.DrawTracers = value;
+				OnPropertyChanged(nameof(DrawTracers));
+			}
+		}
 	}
 
 	/// <summary>
 	/// The title of the simulation system.
 	/// </summary>
-	[GirCoreNotify(ValidateValue = true)]
-	private string systemTitle = nameof(SystemType.None);
+	[ObservableProperty]
+	public partial string SystemTitle { get; set; } = nameof(SystemType.None);
 
 	/// <summary>
 	/// The type of the simulation system.
 	/// </summary>
-	[GirCoreNotify(ValidateValue = true)]
-	private SystemType systemType = SystemType.None;
+	[ObservableProperty]
+	public partial SystemType SystemType { get; set; } = SystemType.None;
 
-	public bool ShowStats { get; set; } = true;
+	[ObservableProperty]
+	public partial bool ShowStats { get; set; } = true;
 
 	/// <summary>
 	/// The collection of bodies in the simulation. 

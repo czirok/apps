@@ -1,5 +1,4 @@
 using EasyUIBinding.GirCore;
-using EasyUIBinding.GirCore.Binding;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using System.Globalization;
@@ -123,7 +122,7 @@ public class GomokuControls : Gtk.Box, IDisposable
 
 			new SpinInteger("board-size", L["Board size"], 20, new IntRange(10, 60))
 				.BindTo(_boardModel, nameof(BoardModel.BoardSize))
-				.OnChanged(() => {
+				.OnSpinIntegerChanged(() => {
 					NewGameOnMainThread();
 				}),
 
@@ -135,7 +134,7 @@ public class GomokuControls : Gtk.Box, IDisposable
 				{ GameMode.EngineVsHuman, L["AI starts"] }
 			}, _boardModel.GameMode, _boardModel.GameMode)
 				.BindTo(_boardModel, nameof(BoardModel.GameMode))
-				.OnChanged(() => {
+				.OnToggleChanged(() => {
 					if (_boardModel.GameMode == GameMode.HumanVsEngine)
 					{
 						// Player starts: even numbers (0,2,4,6...)
@@ -150,7 +149,7 @@ public class GomokuControls : Gtk.Box, IDisposable
 					SettingsDialog.Close();
 				}),
 
-			new Button("reset", new ButtonLabel(L["New game"])).OnClick(() => {
+			new Button("reset", Gtk.Label.New(L["New game"]).Button()).OnClick(() => {
 				OnRestart();
 				SettingsDialog.Close();
 			}),
@@ -161,7 +160,7 @@ public class GomokuControls : Gtk.Box, IDisposable
 				{ BoardTheme.PaperAndPencil, L["Paper and pencil"] }
 			}, _boardModel.BoardTheme, _boardModel.BoardTheme)
 				.BindTo(_boardModel, nameof(BoardModel.BoardTheme))
-				.OnChanged(() => {
+				.OnComboChanged(() => {
 					_board.InvalidateOnMainThread();
 					SettingsDialog.Close();
 				}),
@@ -175,14 +174,11 @@ public class GomokuControls : Gtk.Box, IDisposable
 				_cultures.SpecificActiveSelector(),
 				_cultures.SpecificDefaultCultureInfo().Name,
 				CultureInfo.CurrentUICulture.Name)
-				.OnChanged((sender, args) => {
-					if (args is not InputDictionaryChangedEventArgs<string> inputArgs)
+				.OnComboChanged<string>((sender, args) => {
+					if (args.Title == null || !_cultures.SpecificActiveCultures().Contains(args.Key))
 						return;
 
-					if (inputArgs.Title == null || !_cultures.SpecificActiveCultures().Contains(inputArgs.Key))
-						return;
-
-					var culture = inputArgs.Key.ToSpecificCulture() ?? _cultures.SpecificDefaultCultureInfo();
+					var culture = args.Key.ToSpecificCulture() ?? _cultures.SpecificDefaultCultureInfo();
 
 					if (CultureInfo.CurrentUICulture.Name == culture.Name)
 						return;

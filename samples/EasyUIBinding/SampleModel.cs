@@ -1,4 +1,5 @@
-using EasyUIBinding.GirCore.Binding;
+using System.Diagnostics.CodeAnalysis;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace EasyUIBinding;
 
@@ -37,53 +38,63 @@ public enum ZodiacSign
 	Pisces
 }
 
-public partial class SampleModel : NotifyPropertyModel
+[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicProperties)]
+public partial class SampleModel : ObservableObject
 {
-	[GirCoreNotify]
-	private string clipboard = "Sample text copied to clipboard.";
+	[ObservableProperty]
+	public partial string Clipboard { get; set; } = "Sample text copied to clipboard.";
 
-	[GirCoreNotify]
-	private Gdk.RGBA color = new() { Red = 0.8f, Green = 0.5f, Blue = 0.2f, Alpha = 1.0f };
+	[ObservableProperty]
+	public partial Gdk.RGBA Color { get; set; } = new() { Red = 0.8f, Green = 0.5f, Blue = 0.2f, Alpha = 1.0f };
 
-	[GirCoreNotify]
-	private FlowerType flower = FlowerType.Rose;
+	[ObservableProperty]
+	public partial FlowerType Flower { get; set; } = FlowerType.Lily;
 
-	[GirCoreNotify]
-	private string flowerName = "Rose";
+	[ObservableProperty]
+	public partial string FlowerName { get; set; }
 
-	[GirCoreNotify]
-	private string font = default!;
+	[ObservableProperty]
+	public partial string Font { get; set; } = default!;
 
-	[GirCoreNotify]
-	private string saveAs = "sample.txt";
+	[ObservableProperty]
+	public partial string SaveAs { get; set; } = "sample.txt";
 
-	[GirCoreNotify]
-	private double spinDouble;
+	[ObservableProperty]
+	public partial string LoadedFile { get; set; } = "sample.txt";
 
-	[GirCoreNotify]
-	private float spinFloat;
+	[ObservableProperty]
+	public partial double SpinDouble { get; set; } = 0.42;
 
-	[GirCoreNotify]
-	private int spinInt;
+	[ObservableProperty]
+	public partial float SpinFloat { get; set; } = 0.42f;
 
-	[GirCoreNotify]
-	private string text = "Sample text";
+	[ObservableProperty]
+	public partial int SpinInt { get; set; } = 42;
 
-	[GirCoreNotify]
-	private bool powerButton = true;
+	[ObservableProperty]
+	public partial string Text { get; set; } = "Sample text";
 
-	[GirCoreNotify]
-	private DayPhase dayPhase = DayPhase.Morning;
+	[ObservableProperty]
+	public partial string Password { get; set; } = "password";
 
-	[GirCoreNotify]
-	private string dayPhaseName = default!;
+	[ObservableProperty]
+	public partial bool PowerButton { get; set; } = true;
 
-	[GirCoreNotify]
-	private string view = "Static View";
+	[ObservableProperty]
+	public partial DayPhase DayPhase { get; set; } = DayPhase.Night;
 
-	[GirCoreNotify]
-	private ZodiacSign zodiacSign = ZodiacSign.Leo;
+	[ObservableProperty]
+	public partial string DayPhaseName { get; set; }
 
-	[GirCoreNotify]
-	private string zodiacSignName = "Leo";
+	[ObservableProperty]
+	public partial string View { get; set; } = "Static View";
+
+	[ObservableProperty]
+	public partial ZodiacSign ZodiacSign { get; set; } = ZodiacSign.Leo;
+
+	[ObservableProperty]
+	public partial string ZodiacSignName { get; set; }
+
+	[ObservableProperty]
+	public partial double Volume { get; set; } = 50.0;
 }

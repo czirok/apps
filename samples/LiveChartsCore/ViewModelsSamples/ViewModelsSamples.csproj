@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(SampleTargetFramework)</TargetFramework>
+    <Nullable>Enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="EasyUIBinding.GirCore" />
+    <PackageReference Include="LiveChartsCore" />
+    <PackageReference Include="LiveChartsCore.SkiaSharpView" />
+  </ItemGroup>
+
+</Project>

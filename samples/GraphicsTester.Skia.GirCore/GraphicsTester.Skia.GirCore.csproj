@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <TrimmerRootDescriptor Include="ILLink.Trimless.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GraphicsTester.Portable\GraphicsTester.Portable.csproj" />
   </ItemGroup>
 

@@ -6,6 +6,7 @@
 .vscode/.linux/dotnet-install.sh
 .vscode/.linux/oh-my-posh
 
+apps/Gomoku/publish
 apps/N-body/publish
 
 # Linux packages

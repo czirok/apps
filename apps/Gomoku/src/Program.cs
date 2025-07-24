@@ -10,7 +10,7 @@ using System.Text;
 internal class Program
 {
 	internal const string ApplicationId = "org.gnome.pelagomoku";
-	internal const string ApplicationVersion = "1.0";
+	internal const string ApplicationVersion = "1.1.0";
 
 	private static void Main(string[] _)
 	{

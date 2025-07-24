@@ -20,11 +20,22 @@ public static class UI
 	public static Gtk.Box Box(Gtk.Orientation orientation, int spacing)
 		=> Gtk.Box.New(orientation, spacing);
 
+	public static Adw.PreferencesGroup Group() => Adw.PreferencesGroup.New();
+
+	public static Adw.PreferencesGroup Group(Adw.PreferencesRow child)
+		=> Adw.PreferencesGroup.New().AddChild(child);
+
 	public static Adw.PreferencesGroup Group(string? title = default, string? description = default)
 		=> Adw.PreferencesGroup.New().Create(title, description);
 
 	public static Adw.PreferencesGroup Group(Gtk.Widget child, string? title = default)
 		=> Adw.PreferencesGroup.New().AddChild(child, title);
+
+	public static Adw.PreferencesGroup AddChild(this Adw.PreferencesGroup group, Adw.PreferencesRow child)
+	{
+		group.Add(child);
+		return group;
+	}
 
 	public static Adw.Bin AddChild(this Adw.Bin bin, Gtk.Widget child)
 	{
@@ -70,6 +81,17 @@ public static class UI
 		box.MarginEnd = 12;
 		box.Spacing = 24;
 		return box;
+	}
+
+
+	public static Gtk.Label Button(this Gtk.Label label)
+	{
+		label.Xalign = 0;
+		label.MarginTop = 12;
+		label.MarginBottom = 12;
+		label.MarginStart = 12;
+		label.MarginEnd = 12;
+		return label;
 	}
 
 	public static Adw.PreferencesGroup Create(this Adw.PreferencesGroup group, string? title = default, string? description = default)

@@ -26,8 +26,8 @@ public class About
 		Window.SetVersion(Program.ApplicationVersion);
 		Window.SetDeveloperName("Ferenc Czirok");
 		Window.SetComments(L["About Comment"]);
-		Window.SetWebsite("https://github.com/czirok/apps/apps/Gomoku");
-		Window.SetDevelopers(["Petr Laštovička https://github.com/plastovicka/Piskvork", "Ferenc Czirok https://github.com/czirok/apps/apps/Gomoku"]);
+		Window.SetWebsite("https://github.com/czirok/apps");
+		Window.SetDevelopers(["Petr Laštovička https://github.com/plastovicka/Piskvork", "Ferenc Czirok https://github.com/czirok/apps"]);
 		Window.SetLicenseType(Gtk.License.Gpl30);
 	}
 }

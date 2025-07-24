@@ -29,6 +29,12 @@ $APPSLINUX/dotnet-install.sh --channel 9.0 --runtime dotnet --architecture x64 -
 $APPSLINUX/dotnet-install.sh --channel 9.0 --runtime aspnetcore --architecture x64 --os linux --install-dir $APPSLINUX/.dotnet
 ```
 
+### Add nuget source
+
+```bash
+dotnet nuget add source $APPSLINUX/.dotnet/library-packs/ --name "Apps"
+```
+
 ## Manage packages
 
 ### Install dotnet-outdated-tool
@@ -50,6 +56,13 @@ dotnet outdated --maximum-version 8.0
 dotnet outdated --maximum-version 9.0
 dotnet outdated --maximum-version 10.0 --pre-release Always
 
+```
+
+### MAUI Workload
+
+```bash
+cd samples
+dotnet workload restore SamplesMaui.sln
 ```
 
 ## VS Code

@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <TrimmerRootDescriptor Include="ILLink.Trimless.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="GirCore.Adw-1" />
     <PackageReference Include="GirCore.Gtk-4.0" />
     <PackageReference Include="Microsoft.Extensions.Localization" />

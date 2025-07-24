@@ -29,8 +29,8 @@ public class About
 		Window.SetVersion(Program.ApplicationVersion);
 		Window.SetDeveloperName("Ferenc Czirok");
 		Window.SetComments(L["Comments"]);
-		Window.SetWebsite("https://github.com/czirok/apps/apps/N-body");
-		Window.SetDevelopers(["Zong Zheng Li https://zongzhengli.github.io/nbody.html", "Ferenc Czirok https://github.com/czirok/apps/apps/N-body"]);
+		Window.SetWebsite("https://github.com/czirok/apps");
+		Window.SetDevelopers(["Zong Zheng Li https://zongzhengli.github.io/nbody.html", "Ferenc Czirok https://github.com/czirok/apps"]);
 		Window.SetLicense("""
 <b>Creative Commons Attribution 4.0 International</b>
 <small><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></small>

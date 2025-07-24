@@ -1,5 +1,4 @@
 using EasyUIBinding.GirCore;
-using EasyUIBinding.GirCore.Binding;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using System.Globalization;
@@ -70,7 +69,7 @@ public class Settings : Adw.PreferencesPage, IDisposable
 	private void CreateInputs()
 	{
 		Systems.AddRange([
-			new WrapToggle<SystemType>("systems", new Dictionary<SystemType, string>
+			new WrapToggle<SystemType>("systems", string.Empty, new Dictionary<SystemType, string>
 			{
 				[SystemType.None] = L["None"],
 				[SystemType.DistributionTest] = L["Distribution Test"],
@@ -93,13 +92,13 @@ public class Settings : Adw.PreferencesPage, IDisposable
 				[SystemType.SupernovaRemnants] = L["Supernova Remnants"]
 			},
 			SystemType.None)
-				.OnChanged(() => {
-					_logger.LogInformation("System type changed to {SystemType} with title {SystemTitle}",
+				.OnWrapToggleChanged(() => {
+					_logger.LogTrace("System type changed to {SystemType} with title {SystemTitle}",
 						World.Instance.SystemType, World.Instance.SystemTitle);
 					World.Instance.Generate();
 				})
-				.BindTo(World.Instance, nameof(World.Instance.SystemType))
-				.BindTo(World.Instance, nameof(World.Instance.SystemTitle))
+				.BindTo(World.Instance, nameof(World.SystemType))
+				.BindTo(World.Instance, nameof(World.SystemTitle))
 
 		]);
 
@@ -110,47 +109,47 @@ public class Settings : Adw.PreferencesPage, IDisposable
 
 		Parameters.AddRange([
 			new SpinInteger("G", L["Gravitational Constant G"], (int)World.Instance.G, new IntRange(1, 1000))
-				.OnChanged(() => {
-					_logger.LogInformation("Gravitational constant G changed to {G}", World.Instance.G);
+				.OnSpinIntegerChanged(() => {
+					_logger.LogTrace("Gravitational constant G changed to {G}", World.Instance.G);
 				})
 				.BindTo(World.Instance, nameof(World.G)),
 			new SpinInteger("C", L["Speed of Light C"], (int)World.Instance.C, new IntRange(10, 1_000_000))
-				.OnChanged(() => {
-					_logger.LogInformation("Speed of light C changed to {C}", World.Instance.C);
+				.OnSpinIntegerChanged(() => {
+					_logger.LogTrace("Speed of light C changed to {C}", World.Instance.C);
 				})
 				.BindTo(World.Instance, nameof(World.C)),
 			new SpinInteger("N", L["Number of Bodies N"], World.Instance.BodyAllocationCount, new IntRange(0, 10000))
-				.OnChanged(() => {
-					_logger.LogInformation("Body allocation count changed to {Count}", World.Instance.BodyAllocationCount);
+				.OnSpinIntegerChanged(() => {
+					_logger.LogTrace("Body allocation count changed to {Count}", World.Instance.BodyAllocationCount);
 					World.Instance.Generate();
 				})
-				.BindTo(World.Instance, nameof(World.Instance.BodyAllocationCount))
+				.BindTo(World.Instance, nameof(World.BodyAllocationCount))
 		]);
 
 		Functions.AddRange([
-			new Switch("stop-start", L["Stop / Start"])
-				.OnChanged(() => {
-					_logger.LogInformation("World active state changed to {Active}", World.Instance.Active);
+			new Switch("stop-start", L["Stop / Start"], World.Instance.Active)
+				.OnSwitchToggled(() => {
+					_logger.LogTrace("World active state changed to {Active}", World.Instance.Active);
 				})
 				.BindTo(World.Instance, nameof(World.Active)),
 			new Switch("tree", L["Hide / Show Tree"])
-				.OnChanged(() => {
-					_logger.LogInformation("Draw tree state changed to {DrawTree}", World.Instance.DrawTree);
+				.OnSwitchToggled(() => {
+					_logger.LogTrace("Draw tree state changed to {DrawTree}", World.Instance.DrawTree);
 				})
 				.BindTo(World.Instance, nameof(World.DrawTree)),
 			new Switch("traces", L["Hide / Show Traces"])
-				.OnChanged(() => {
-					_logger.LogInformation("Draw traces state changed to {DrawTracers}", World.Instance.DrawTracers);
+				.OnSwitchToggled(() => {
+					_logger.LogTrace("Draw traces state changed to {DrawTracers}", World.Instance.DrawTracers);
 				})
 				.BindTo(World.Instance, nameof(World.DrawTracers)),
-			new Button("reset-camera", new ButtonLabel(L["Reset Camera"]))
+			new Button("reset-camera", Gtk.Label.New(L["Reset Camera"]).Button())
 				.OnClick(() => {
 					World.Instance.ResetCamera();
-					_logger.LogInformation("Camera reset to default position and orientation.");
+					_logger.LogTrace("Camera reset to default position and orientation.");
 				}),
 			new Switch("stats", L["Hide / Show Stats"])
-				.OnChanged(() => {
-					_logger.LogInformation("Show stats state changed to {ShowStats}", World.Instance.ShowStats);
+				.OnSwitchToggled(() => {
+					_logger.LogTrace("Show stats state changed to {ShowStats}", World.Instance.ShowStats);
 				})
 				.BindTo(World.Instance, nameof(World.ShowStats))
 		]);
@@ -158,14 +157,15 @@ public class Settings : Adw.PreferencesPage, IDisposable
 		Languages.AddRange([
 			new WrapToggle<string>(
 				"languages",
+				string.Empty,
 				_cultures.SpecificActiveSelector(),
 				_cultures.SpecificDefaultCultureInfo().Name,
 				CultureInfo.CurrentUICulture.Name)
-				.OnChanged((sender, args) => {
-					_logger.LogInformation($"Args type: {args.GetType().Name}");
+				.OnWrapToggleChanged<string>((sender, args) => {
+					_logger.LogTrace($"Args type: {args.GetType().Name}");
 					if (args is not InputDictionaryChangedEventArgs<string> inputArgs)
 						return;
-					_logger.LogInformation("Language changed to {Language} with title {Title}", inputArgs.Key, inputArgs.Title);
+					_logger.LogTrace("Language changed to {Language} with title {Title}", inputArgs.Key, inputArgs.Title);
 					if (inputArgs.Title == null || !_cultures.SpecificActiveCultures().Contains(inputArgs.Key))
 						return;
 					var culture = inputArgs.Key.ToSpecificCulture();
