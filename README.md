@@ -15,7 +15,7 @@
 
 ### N-body
 
-[N-body simulation](/apps/N-body/README.md) built with GirCore and Maui Graphics. Packages are available for [Arch](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody-1.2.2-1-x86_64.pkg.tar.zst), [DEB](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody_1.2.2_amd64.deb), [RPM](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody-1.2.2-1.x86_64.rpm), [Flatpak](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody-1.2.2-x86_64.flatpak), and as a [portable tar.gz](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody-1.2.2-x86_64.tar.gz).
+[N-body simulation](/apps/N-body/README.md) built with GirCore and Maui Graphics. Packages are available for [Arch](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody-1.2.2-1-x86_64.pkg.tar.zst), [DEB](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody_1.2.2_amd64.deb), [RPM](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody-1.2.2-1.x86_64.rpm), [Flatpak](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody-1.2.2-x86_64.flatpak), and as a [portable tar.gz](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/nbody-1.2.2-x86_64.tar.gz). Also runs on Windows 11 via [WSL2](/docs/Arch-WSL2.md) with GUI support.
 
 ![N-body simulation](/apps/N-body/n-body.gif)
 
@@ -23,7 +23,7 @@
 
 ### Pela Gomoku
 
-[Pela Gomoku](/apps/Gomoku/README.md) - built with GirCore and Maui Graphics. Packages are available for [Arch](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-1-x86_64.pkg.tar.zst), [DEB](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku_1.1.0_amd64.deb), [RPM](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-1.x86_64.rpm), [Flatpak](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-x86_64.flatpak), and as a [portable tar.gz](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-x86_64.tar.gz).
+[Pela Gomoku](/apps/Gomoku/README.md) - built with GirCore and Maui Graphics. Packages are available for [Arch](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-1-x86_64.pkg.tar.zst), [DEB](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku_1.1.0_amd64.deb), [RPM](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-1.x86_64.rpm), [Flatpak](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-x86_64.flatpak), and as a [portable tar.gz](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-x86_64.tar.gz). Also runs on Windows 11 via [WSL2](/docs/Arch-WSL2.md) with GUI support.
 
 ![Pela Gomoku](/apps/Gomoku/gomoku.png)
 
@@ -63,3 +63,4 @@ cd samples && chmod +x ./aot.sh && ./aot.sh
 - [v2025.07.20-nuget](.github/releases/v2025.07.20-nuget.md)
 - [v2025.07.24-nuget](.github/releases/v2025.07.24-nuget.md)
 - [v2025.07.24-apps](.github/releases/v2025.07.24-apps.md)
+- [v2025.07.31-windows11-wsl2](.github/releases/v2025.07.31-windows11-wsl2.md)

@@ -30,8 +30,9 @@ Packages tested on:
 
 |OS|Version|
 |---|---|
+|Windows 11 WSL2|[pelagomoku-1.1.0-1-x86_64.pkg.tar.zst](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-1-x86_64.pkg.tar.zst)|
 |Arch Linux (latest)|[pelagomoku-1.1.0-1-x86_64.pkg.tar.zst](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-1-x86_64.pkg.tar.zst)|
-|Debian Bookworm (12)|[pelagomoku_1.1.0_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku_1.1.0_amd64.deb)|
+|Debian Trixie (13)|[pelagomoku_1.1.0_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku_1.1.0_amd64.deb)|
 |Ubuntu Plucky Puffin (25.04)|[pelagomoku_1.1.0_amd64.deb](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku_1.1.0_amd64.deb)|
 |Fedora Adams (42)|[pelagomoku-1.1.0-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-1.x86_64.rpm)|
 |OpenSUSE Tumbleweed (latest)|[pelagomoku-1.1.0-1.x86_64.rpm](https://github.com/czirok/apps/releases/download/v2025.07.24-apps/pelagomoku-1.1.0-1.x86_64.rpm)|
@@ -46,10 +47,15 @@ Flatpak package tested on:
 
 ## Installation
 
+### Windows 11 WSL2
+
+To run on Windows 11 WSL2, follow the [WSL2 setup guide](/docs/Arch-WSL2.md) to install Arch Linux with GUI support.
+
 ### Package Installation
 
 |OS|Package|
 |---|---|
+|**Windows 11 WSL2:**|`sudo pacman -U pelagomoku-1.1.0-1-x86_64.pkg.tar.zst`|
 |**Arch Linux:**|`sudo pacman -U pelagomoku-1.1.0-1-x86_64.pkg.tar.zst`|
 |**Debian/Ubuntu:**|`sudo dpkg -i pelagomoku_1.1.0_amd64.deb`|
 |**Fedora:**|`sudo dnf install pelagomoku-1.1.0-1.x86_64.rpm`|
@@ -71,12 +77,17 @@ Install `cairo libadwaita gdk-pixbuf2` dependencies, then:
 
 |OS|Command|
 |---|---|
+|**Windows 11 WSL2:**|`sudo pacman -R pelagomoku`|
 |**Arch Linux:**|`sudo pacman -R pelagomoku`|
 |**Debian/Ubuntu:**|`sudo apt remove pelagomoku`|
 |**Fedora:**|`sudo dnf remove pelagomoku`|
 |**openSUSE:**|`sudo zypper remove pelagomoku`|
 |**Flatpak:**|`flatpak uninstall org.gnome.pelagomoku`|
 |**tar.gz:**|`./uninstall-from-home.sh` (if installed to menu)|
+
+### Windows 11 WSL2 removal
+
+Read the [WSL2 removal guide](/docs/Arch-WSL2_uninstall.md) to uninstall Arch Linux and WSL2.
 
 ## Building
 
