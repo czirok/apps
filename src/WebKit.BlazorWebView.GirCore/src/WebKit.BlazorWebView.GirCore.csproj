@@ -6,7 +6,7 @@
     <PackageTags>blazor;webview;linux;gtk;webkit;gircore;desktop;native;electron-alternative;spa;routing</PackageTags>
 
     <PackageId>WebKit.BlazorWebView.GirCore</PackageId>
-    <PackageVersion>10.0.0-preview.6</PackageVersion>
+    <PackageVersion>10.0.0-rc.1</PackageVersion>
   </PropertyGroup>
 
   <Import Project="..\..\Nuget.Common.props" />

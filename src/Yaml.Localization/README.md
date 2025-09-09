@@ -37,8 +37,28 @@ A modern localization library for .NET applications that uses YAML files instead
 
 ## Installation
 
+Install the NuGet package
+
 ```bash
-dotnet add package Yaml.Localization --version 10.0.0-preview.6
+dotnet add package Yaml.Localization --version 10.0.0-rc.1
+```
+
+Install the Blazor assets
+
+```bash
+libman install @blazor/assets@1.0.0 \
+  --provider unpkg \
+  --destination wwwroot \
+  --files css/bootstrap.min.css \
+  --files css/bootstrap.rtl.min.css \
+  --files js/blazor.body.min.js \
+  --files js/blazor.body.min.js.map \
+  --files js/blazor.head.min.js \
+  --files js/blazor.head.min.js.map \
+  --files js/blazor.web.head.min.js \
+  --files js/blazor.web.head.min.js.map \
+  --files js/bootstrap.bundle.min.js \
+  --files js/bootstrap.bundle.min.js.map
 ```
 
 ## YAML File Structure

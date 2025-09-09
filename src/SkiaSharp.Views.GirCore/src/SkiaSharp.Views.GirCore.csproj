@@ -6,7 +6,7 @@
     <PackageTags>skiasharp;gtk;cairo;graphics;rendering;2d;gircore;linux;desktop;drawing;canvas;hardware-acceleration;widget;drawingarea;custom-controls</PackageTags>
 
     <PackageId>SkiaSharp.Views.GirCore</PackageId>
-    <PackageVersion>3.119.0-preview.6</PackageVersion>
+    <PackageVersion>3.119.1-preview.1</PackageVersion>
 
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>

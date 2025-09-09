@@ -6,7 +6,7 @@
     <PackageTags>maui;graphics;skiasharp;gtk;cross-platform;drawing;shapes;canvas;gircore;linux;desktop;vector-graphics;idrawable;widget;renderer</PackageTags>
 
     <PackageId>Gtk.MauiGraphicsSkia.GirCore</PackageId>
-    <PackageVersion>10.0.0-preview.6</PackageVersion>
+    <PackageVersion>10.0.0-rc.1</PackageVersion>
   </PropertyGroup>
 
   <Import Project="..\..\Nuget.Common.props" />

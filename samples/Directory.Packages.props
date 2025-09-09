@@ -5,9 +5,9 @@
   <ItemGroup>
     <PackageVersion Include="CommunityToolkit.Maui" Version="12.1.0" />
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-    <PackageVersion Include="GirCore.Adw-1" Version="0.7.0-preview.1" />
-    <PackageVersion Include="GirCore.Gtk-4.0" Version="0.7.0-preview.1" />
-    <PackageVersion Include="GirCore.WebKit-6.0" Version="0.7.0-preview.1" />
+    <PackageVersion Include="GirCore.Adw-1" Version="0.7.0-preview.2" />
+    <PackageVersion Include="GirCore.Gtk-4.0" Version="0.7.0-preview.2" />
+    <PackageVersion Include="GirCore.WebKit-6.0" Version="0.7.0-preview.2" />
 
     <PackageVersion Include="LiveChartsCore" Version="2.0.0-rc5.4" />
     <PackageVersion Include="LiveChartsCore.Behaviours" Version="2.0.0-rc5.4" />
@@ -16,20 +16,20 @@
     <PackageVersion Include="Markdig" Version="0.41.3" />
     <PackageVersion Include="Tynamix.ObjectFiller" Version="1.5.9" />
 
-    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.6" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.6" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.6" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.WebView" Version="9.0.6" />
-    <PackageVersion Include="Microsoft.Extensions.Localization" Version="9.0.6" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="9.0.6" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.6" />
-    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="9.0.6" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="9.0.81" />
-    <PackageVersion Include="Microsoft.Maui.Controls" Version="9.0.81" />
-    <PackageVersion Include="Microsoft.Maui.Core" Version="9.0.81" />
-    <PackageVersion Include="Microsoft.Maui.Graphics" Version="9.0.81" />
-    <PackageVersion Include="Microsoft.Maui.Graphics.Skia" Version="9.0.81" />
-    <PackageVersion Include="Microsoft.Maui.Graphics.Text.Markdig" Version="9.0.81" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.9" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.9" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.9" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebView" Version="9.0.9" />
+    <PackageVersion Include="Microsoft.Extensions.Localization" Version="9.0.9" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="9.0.9" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="9.0.9" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="9.0.100" />
+    <PackageVersion Include="Microsoft.Maui.Controls" Version="9.0.100" />
+    <PackageVersion Include="Microsoft.Maui.Core" Version="9.0.100" />
+    <PackageVersion Include="Microsoft.Maui.Graphics" Version="9.0.100" />
+    <PackageVersion Include="Microsoft.Maui.Graphics.Skia" Version="9.0.100" />
+    <PackageVersion Include="Microsoft.Maui.Graphics.Text.Markdig" Version="9.0.100" />
 
     <PackageVersion Include="SkiaSharp" Version="3.119.0" />
     <PackageVersion Include="SkiaSharp.NativeAssets.Linux" Version="3.119.0" />
@@ -37,11 +37,11 @@
     <PackageVersion Include="SkiaSharp.HarfBuzz" Version="3.119.0" />
     <PackageVersion Include="HarfBuzzSharp.NativeAssets.Linux" Version="8.3.1.1" />
 
-    <PackageVersion Include="EasyUIBinding.GirCore" Version="0.7.0-preview.1.4" />
-    <PackageVersion Include="WebKit.BlazorWebView.GirCore" Version="10.0.0-preview.6" />
+    <PackageVersion Include="EasyUIBinding.GirCore" Version="0.7.0-preview.2" />
+    <PackageVersion Include="WebKit.BlazorWebView.GirCore" Version="10.0.0-rc.1" />
     <PackageVersion Include="Gtk.LiveChartsCore.SkiaSharpView.GirCore" Version="2.0.0-rc5.4" />
-    <PackageVersion Include="Gtk.MauiGraphicsSkia.GirCore" Version="10.0.0-preview.6" />
-    <PackageVersion Include="SkiaSharp.Views.GirCore" Version="3.119.0-preview.6" />
-    <PackageVersion Include="Yaml.Localization" Version="10.0.0-preview.6" />
+    <PackageVersion Include="Gtk.MauiGraphicsSkia.GirCore" Version="10.0.0-rc.1" />
+    <PackageVersion Include="SkiaSharp.Views.GirCore" Version="3.119.1-preview.1" />
+    <PackageVersion Include="Yaml.Localization" Version="10.0.0-rc.1" />
   </ItemGroup>
 </Project>

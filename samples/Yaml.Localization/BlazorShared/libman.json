@@ -1,0 +1,22 @@
+{
+	"version": "3.0",
+	"defaultProvider": "unpkg",
+	"libraries": [
+		{
+			"library": "@blazor/assets@1.0.0",
+			"destination": "wwwroot",
+			"files": [
+				"css/bootstrap.min.css",
+				"css/bootstrap.rtl.min.css",
+				"js/blazor.body.min.js",
+				"js/blazor.body.min.js.map",
+				"js/blazor.head.min.js",
+				"js/blazor.head.min.js.map",
+				"js/blazor.web.head.min.js",
+				"js/blazor.web.head.min.js.map",
+				"js/bootstrap.bundle.min.js",
+				"js/bootstrap.bundle.min.js.map"
+			]
+		}
+	]
+}

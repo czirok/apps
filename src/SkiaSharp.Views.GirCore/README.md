@@ -26,7 +26,7 @@ This package provides a custom GTK4 `DrawingArea` widget (`SKDrawingArea`) that 
 Install the package via NuGet:
 
 ```bash
-dotnet add package SkiaSharp.Views.GirCore --version 3.119.0-preview.6
+dotnet add package SkiaSharp.Views.GirCore --version 3.119.1-preview.1
 ```
 
 ## Usage

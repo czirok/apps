@@ -1,10 +1,30 @@
+.editorconfig
+.npmrc
+.nvmrc
+eslint.config.ts
+package.json
+pnpm-workspace.yaml
+pnpm-lock.yaml
+stylelint.config.ts
+packages
+
 # Visual Studio Code
 .vscode/.extensions
-.vscode/.user.data
 .vscode/.linux/.dotnet
+.vscode/.linux/fonts
+.vscode/.linux/scripts
+.vscode/.linux/templates
+.vscode/.linux/themes
 .vscode/.linux/.bash_history
+.vscode/.linux/.bashrc
+.vscode/.linux/.font_state
 .vscode/.linux/dotnet-install.sh
+.vscode/.linux/install.sh
 .vscode/.linux/oh-my-posh
+.vscode/.linux/oh-my-posh.json
+.vscode/.user.data
+.vscode/extensions.json
+.vscode/settings.json
 
 apps/Gomoku/publish
 apps/N-body/publish
@@ -29,4 +49,3 @@ test/Yaml.Localization/Benchmark/BenchmarkDotNet.Artifacts
 
 **/node_modules/
 **/dist
-

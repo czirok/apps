@@ -6,7 +6,7 @@
     <PackageTags>localization;i18n;internationalization;yaml;yamlresource;embedded;resource;embeddedresource;file;filesystem;globalization;culture;translation;multilingual;aspnetcore;dotnet</PackageTags>
 
     <PackageId>Yaml.Localization</PackageId>
-    <PackageVersion>10.0.0-preview.6</PackageVersion>
+    <PackageVersion>10.0.0-rc.1</PackageVersion>
   </PropertyGroup>
 
   <Import Project="..\..\Nuget.Common.props" />

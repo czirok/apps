@@ -55,6 +55,31 @@ cd samples && chmod +x ./aot.sh && ./aot.sh
 - Self-contained - no .NET runtime required
 - Small footprint - optimized native code
 
+## Development Environment Installation
+
+Set the installation path (you can change it if you prefer a different location):
+
+```bash
+export TARGET_DIR=~/dev/apps
+```
+
+Install
+
+```bash
+git clone https://github.com/czirok/apps.git "$TARGET_DIR" && \
+cd "$TARGET_DIR" && \
+wget https://github.com/czirok/devenv/releases/download/v2025.08.08/devenv.tar.bz2 && \
+tar xjfv devenv.tar.bz2 --skip-old-files && \
+.vscode/.linux/install.sh --all --verbose && \
+pnpm install
+```
+
+Launch VS Code (without the leading dot), and install the suggested extensions:
+
+```bash
+code
+```
+
 ## Changelog
 
 - [v2025.07.14-nuget](.github/releases/v2025.07.14-nuget.md)
@@ -64,3 +89,4 @@ cd samples && chmod +x ./aot.sh && ./aot.sh
 - [v2025.07.24-nuget](.github/releases/v2025.07.24-nuget.md)
 - [v2025.07.24-apps](.github/releases/v2025.07.24-apps.md)
 - [v2025.07.31-windows11-wsl2](.github/releases/v2025.07.31-windows11-wsl2.md)
+- [v2025.09.10](.github/releases/v2025.09.10.md)

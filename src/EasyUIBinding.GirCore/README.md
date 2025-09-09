@@ -13,7 +13,7 @@ EasyUIBinding.GirCore brings **declarative, type-safe data binding** to GTK appl
 ## Installation
 
 ```bash
-dotnet add package EasyUIBinding.GirCore --version 0.7.0-preview.1.4
+dotnet add package EasyUIBinding.GirCore --version 0.7.0-preview.2
 ```
 
 ## Quick Start
